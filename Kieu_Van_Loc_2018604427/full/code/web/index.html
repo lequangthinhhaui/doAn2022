@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="  https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <title>Web giám sát điện áp và dòng điện động cơ</title>
+    <!-- <link rel = "icon" href = "https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" type = "image/x-icon"> -->
+</head>
+<body>
+    <div class="wrapper-body">
+        <div id="header">
+            <h1>Web giám sát điện áp và dòng điện động cơ</h1>
+            <h2>Sinh viên thực hiện: Kiều Văn lộc</h2>
+        </div>
+
+        <div id="main-body">
+            <div class="wrapper-main-body" >
+                <div class="parameter">
+                    <div>
+                        <div>Điện áp</div>
+                        <div id="dien-ap">0000</div>
+                        <div>(V)</div> 
+                    </div>
+                    <div>
+                        <div>Dòng điện</div>
+                        <div id="dong-dien">0000</div>
+                        <div>(A)</div> 
+                    </div>
+                </div>
+    
+                <div class="para-plot">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="main.js" type="text/javascript"></script>
+

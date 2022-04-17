@@ -1,0 +1,75 @@
+Added Component: Designator=C1(Header2)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/6130xx143121.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Karrer Zheng"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "29 March 2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "W¨¹rth Elektronik eiSos GmbH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NoPins"; Value = "02"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "partNo"; Value = "613002143121"; VariantName = "[No Variations]"
+Added Component: Designator=C2(Header4)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/6130xx143121.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Karrer Zheng"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "29 March 2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "W¨¹rth Elektronik eiSos GmbH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NoPins"; Value = "02"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "partNo"; Value = "613002143121"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(Header10)
+Add component (AddParameter): Name = "Value"; Value = "Connector 10"; VariantName = "[No Variations]"
+Added Component: Designator=U1(ESP32-WIFIMODULE-FOOTPRINT)
+Added Component: Designator=VR1(Bien Tro Tam Giac Dung)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH003711"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Bi?n Tr? Tam Giác 104-100K RM065"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=BLA Pin=JP1-9
+Added Pin To Net: NetName=BLA Pin=U1-16
+Added Net: Name=BLA
+Added Pin To Net: NetName=BLK Pin=JP1-10
+Added Pin To Net: NetName=BLK Pin=U1-17
+Added Net: Name=BLK
+Added Pin To Net: NetName=E Pin=JP1-6
+Added Pin To Net: NetName=E Pin=U1-24
+Added Net: Name=E
+Added Pin To Net: NetName=PSB Pin=C1-1
+Added Pin To Net: NetName=PSB Pin=C2-1
+Added Pin To Net: NetName=PSB Pin=JP1-1
+Added Pin To Net: NetName=PSB Pin=JP1-7
+Added Pin To Net: NetName=PSB Pin=U1-14
+Added Pin To Net: NetName=PSB Pin=VR1-3
+Added Net: Name=PSB
+Added Pin To Net: NetName=R/W Pin=JP1-5
+Added Pin To Net: NetName=R/W Pin=U1-30
+Added Net: Name=R/W
+Added Pin To Net: NetName=RS Pin=JP1-4
+Added Pin To Net: NetName=RS Pin=U1-23
+Added Net: Name=RS
+Added Pin To Net: NetName=RST Pin=JP1-8
+Added Pin To Net: NetName=RST Pin=U1-29
+Added Net: Name=RST
+Added Pin To Net: NetName=RX2 Pin=C2-2
+Added Pin To Net: NetName=RX2 Pin=U1-22
+Added Net: Name=RX2
+Added Pin To Net: NetName=TX2 Pin=C2-3
+Added Pin To Net: NetName=TX2 Pin=U1-21
+Added Net: Name=TX2
+Added Pin To Net: NetName=V0 Pin=JP1-3
+Added Pin To Net: NetName=V0 Pin=VR1-2
+Added Net: Name=V0
+Added Pin To Net: NetName=VCC Pin=C1-2
+Added Pin To Net: NetName=VCC Pin=C2-4
+Added Pin To Net: NetName=VCC Pin=JP1-2
+Added Pin To Net: NetName=VCC Pin=U1-15
+Added Pin To Net: NetName=VCC Pin=VR1-1
+Added Net: Name=VCC
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Header2
+Added Member To Class: ClassName=Sheet1 Member=Component C2 Header4
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 JP10
+Added Member To Class: ClassName=Sheet1 Member=Component U1 ESP32_MODULE copy
+Added Member To Class: ClassName=Sheet1 Member=Component VR1 100K

@@ -1,0 +1,97 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;   
+}
+
+html, body{
+    background-color: #111217;
+
+    color: white;
+    margin-top: 2%;
+
+}
+
+h1, h2{
+    font-size: 60px;
+}
+
+h2{
+    font-size: 50px;
+}
+
+.wrapper-body
+{
+    background-color: #181B1F;
+    margin: 30px;
+}
+.wrapper-body #header
+{
+    /* border: 1px solid red; */
+    color:rgb(255, 253, 253);
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.wrapper-body #header>h1{
+    text-align: center;
+}
+.wrapper-body #header>h2{
+    text-align: center;
+    text-indent: 400px;
+}
+
+.wrapper-body #main-body .wrapper-main-body
+{
+    /* border: 1px solid rgb(15, 172, 49); */
+    display: flex;
+    flex-direction: row;
+    /* flex-grow: 10; */
+}
+.wrapper-body #main-body .parameter
+{
+    /* border: 1px solid rgb(255, 253, 253); */
+    flex-basis: 20%;
+    font-size: 40px;
+    text-align: center;
+    margin: 0px 10px 0px 0px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.wrapper-body #main-body .parameter div
+{
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #181B1F;
+}
+
+
+.wrapper-body #main-body .parameter>div:first-child{
+    /* border: 1px solid rgb(88, 15, 184); */
+    margin-bottom: 5px;
+    border: 1px solid rgb(68, 66, 66);
+    color: #73BF69;
+}
+
+.wrapper-body #main-body .parameter>div:last-child
+{
+    /* border: 1px solid rgb(88, 15, 184); */
+    margin-top: 5px;
+    border: 1px solid rgb(68, 66, 66);
+    color: #F2495C;
+}
+
+.wrapper-body #main-body .para-plot
+{
+    border: 1px solid rgb(68, 66, 66);
+    flex-basis: 80%;
+    font-size: 50px;
+    text-align: center;
+}
