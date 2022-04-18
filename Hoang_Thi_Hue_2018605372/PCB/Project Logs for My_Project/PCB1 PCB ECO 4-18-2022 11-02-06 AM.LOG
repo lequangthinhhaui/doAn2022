@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=NetHD1_1 Pin=HD1-1
+Removed Pin From Net: NetName=NetHD2_1 Pin=HD2-1
+Removed Pin From Net: NetName=NetHD3_1 Pin=HD3-1
+Removed Pin From Net: NetName=+12 Pin=HD4-2
+Removed Pin From Net: NetName=NetHD1_1 Pin=RL1-2
+Removed Pin From Net: NetName=NetHD2_1 Pin=RL2-2
+Removed Pin From Net: NetName=NetHD3_1 Pin=RL3-2
+Change Component Comment : Designator=RL1 Old Comment=Relay 10A/12V New Comment=Relay 5V
+Change Component Comment : Designator=RL2 Old Comment=Relay 10A/12V New Comment=Relay 5V
+Change Component Comment : Designator=RL3 Old Comment=Relay 10A/12V New Comment=Relay 5V
+Added Component: Designator=HD1(HED2)
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=HD2(HED2)
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=HD3(HED2)
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetHD1_1 Pin=HD1-1
+Added Pin To Net: NetName=GND Pin=HD1-2
+Added Pin To Net: NetName=NetHD2_1 Pin=HD2-1
+Added Pin To Net: NetName=GND Pin=HD2-2
+Added Pin To Net: NetName=NetHD3_1 Pin=HD3-1
+Added Pin To Net: NetName=GND Pin=HD3-2
+Added Pin To Net: NetName=+12 Pin=HD5-2
+Added Pin To Net: NetName=+12 Pin=JP1-4
+Added Pin To Net: NetName=+12 Pin=JP2-3
+Added Pin To Net: NetName=+12 Pin=JP3-3
+Added Pin To Net: NetName=+12 Pin=R7-2
+Added Pin To Net: NetName=NetHD1_1 Pin=RL1-1
+Added Pin To Net: NetName=NetHD2_1 Pin=RL2-1
+Added Pin To Net: NetName=NetHD3_1 Pin=RL3-1
+Added Pin To Net: NetName=+12 Pin=U2-30
+Change Net Name : Old Net Name=+12 New Net Name=+5
+Added Pin To Net: NetName=+12 Pin=HD4-2
+Added Pin To Net: NetName=+12 Pin=RL1-3
+Added Pin To Net: NetName=+12 Pin=RL2-3
+Added Pin To Net: NetName=+12 Pin=RL3-3
+Added Net: Name=+12
+Added Room: Name=Sheet1

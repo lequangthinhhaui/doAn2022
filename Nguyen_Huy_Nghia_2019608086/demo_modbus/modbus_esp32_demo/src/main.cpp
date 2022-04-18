@@ -15,6 +15,10 @@
 
 #include <WiFi.h>
 
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);  
+
 #define REG 202
 #define REG_NUM 10
 #define SLAVE_ID1 3
@@ -107,6 +111,11 @@ void setup() {
   setup_wifi();
   client.setServer(mqtt_server, mqtt_port); 
   client.setCallback(callback);
+
+  //LCD init
+  lcd.init();
+  // turn on LCD backlight                      
+  lcd.backlight();
   xMutex = xSemaphoreCreateMutex();
   xTaskCreatePinnedToCore(
                     loop1,   /* Task function. */
@@ -167,8 +176,8 @@ void loop2( void * pvParameters ){
       reconnect();
     }
     client.loop();
-    SendDataMQTT();
-    vTaskDelay(2000/portTICK_PERIOD_MS);
+      lcd.setCursor(0, 0);
+    lcd.print(dataInt);
   }
 }
 

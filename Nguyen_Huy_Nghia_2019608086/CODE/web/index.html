@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Websockets Using JavaScript MQTT Client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+ 	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+     
+
+
+
+<script type = "text/javascript">
+
+    var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Math.random() * 100, 10));  
+    client.onConnectionLost = onConnectionLost;  
+    client.onMessageArrived = onMessageArrived;
+
+    var options = { useSSL: false,userName: "",password: "", onSuccess: onConnect , onFailure: doFail } 
+
+    client.connect(options);  
+        
+    function onConnect()
+    {
+        console.log("Connect tới Server");
+        client.subscribe("hungthinhhaui/maylanh");	 // nhận dữ liệu		
+    }  
+
+    function doFail(e) {
+        console.log("Không kết nối được tới server");
+        console.log(e);
+    }
+
+    function onConnectionLost(responseObject) 
+    {
+        if (responseObject.errorCode !== 0) 
+        {
+        console.log("error");
+        console.log("onConnectionLost:" + responseObject.errorMessage);
+        }
+    } 
+
+    function onMessageArrived(message) 
+    {
+        console.log("Data ESP:" + message.payloadString);
+        var DataServer = message.payloadString;
+        //document.getElementById("status-relay-1").innerHTML = DataServer;
+        var DataJson = JSON.parse(DataServer);
+        //console.log(DataServer)
+
+    }
+    function sub_topics()
+    {
+        var stopic= document.forms["subs"]["Stopic"].value;
+        console.log("Subscribing to topic ="+stopic);
+        mqtt.subscribe(stopic);
+        return false;
+    }
+    function send_message()
+    {
+        var DataSend = "A1B";
+        client.send("hungthinhhaui/quat", DataSend, 2, false);
+        console.log("hungthinhhaui/quat:" + DataSend);
+    }
+
+</script>
+  </head>
+  <body>
+    <h1>Websockets Using JavaScript MQTT Client</h1>
+
+ 
+<div id="status">
+    Connection Status: Not Connected
+</div>
+
+<br>
+
+<hr>
+    <form name="subs" action="" onsubmit="return sub_topics()">
+    Subscribe Topic:   <input type="text" name="Stopic"><br><br>
+    <input type="submit" value="Subscribe">
+    </form> 
+<hr>
+
+
+<form name="smessage" action="" onsubmit="return send_message()">
+
+    Message: <input type="text" name="message"><br><br>
+    Publish Topic:   <input type="text" name="Ptopic"><br><br>
+</form>
+
+
+Messages:<p id="messages"></p>
+
+  </body>
+
+
+<style>
+	#messages
+	{
+	background-color:yellow;
+	font-size:3;
+	font-weight:bold;
+	line-height:140%;
+	}
+	#status
+	{
+	background-color:red;
+	font-size:4;
+	font-weight:bold;
+	color:white;
+	line-height:140%;
+	}
+</style>
+</html>
+
