@@ -1,0 +1,375 @@
+Removed Pin From Net: NetName=VCC5 Pin=D1-1
+Removed Pin From Net: NetName=VCC5 Pin=D2-1
+Removed Pin From Net: NetName=VCC5 Pin=D3-1
+Removed Pin From Net: NetName=VCC5 Pin=D4-1
+Removed Pin From Net: NetName=VCC5 Pin=D5-1
+Removed Pin From Net: NetName=VCC5 Pin=D6-1
+Removed Pin From Net: NetName=NetJP1_1 Pin=JP1-1
+Removed Pin From Net: NetName=NetJP1_2 Pin=JP1-2
+Removed Pin From Net: NetName=GND_ISO Pin=LED3-2
+Removed Pin From Net: NetName=GND_ISO Pin=LED6-2
+Removed Pin From Net: NetName=GND_ISO Pin=LED7-2
+Removed Pin From Net: NetName=GND_ISO Pin=LED10-2
+Removed Pin From Net: NetName=GND_ISO Pin=LED11-2
+Removed Pin From Net: NetName=GND_ISO Pin=LED12-2
+Removed Pin From Net: NetName=GND Pin=Q1-1
+Removed Pin From Net: NetName=NetQ1_3 Pin=Q1-3
+Removed Pin From Net: NetName=GND Pin=Q2-1
+Removed Pin From Net: NetName=GND Pin=Q3-1
+Removed Pin From Net: NetName=GND Pin=Q4-1
+Removed Pin From Net: NetName=GND Pin=Q5-1
+Removed Pin From Net: NetName=GND Pin=Q6-1
+Removed Pin From Net: NetName=OUT_1 Pin=R3-1
+Removed Pin From Net: NetName=NetR3_2 Pin=R3-2
+Removed Pin From Net: NetName=NetR4_1 Pin=R4-1
+Removed Pin From Net: NetName=NetQ1_3 Pin=R4-2
+Removed Pin From Net: NetName=OUT_2 Pin=R9-1
+Removed Pin From Net: NetName=OUT_3 Pin=R17-1
+Removed Pin From Net: NetName=OUT_4 Pin=R25-1
+Removed Pin From Net: NetName=OUT_5 Pin=R27-1
+Removed Pin From Net: NetName=OUT_6 Pin=R29-1
+Removed Pin From Net: NetName=NetJP1_2 Pin=RL1-1
+Removed Pin From Net: NetName=NetJP1_1 Pin=RL1-4
+Removed Pin From Net: NetName=VCC5 Pin=RL3-3
+Removed Pin From Net: NetName=VCC5 Pin=RL4-3
+Removed Pin From Net: NetName=VCC5 Pin=RL5-3
+Removed Pin From Net: NetName=VCC5 Pin=RL6-3
+Removed Pin From Net: NetName=NetR3_2 Pin=U1-1
+Removed Pin From Net: NetName=NetR4_1 Pin=U1-3
+Removed Pin From Net: NetName=VCC5 Pin=U1-4
+Removed Pin From Net: NetName=VCC5 Pin=U2-4
+Removed Pin From Net: NetName=VCC5 Pin=U3-4
+Removed Pin From Net: NetName=VCC5 Pin=U4-4
+Removed Pin From Net: NetName=VCC5 Pin=U6-4
+Removed Pin From Net: NetName=VCC5 Pin=U7-4
+Removed Member From Class: ClassName=Sheet1 Member=D2
+Removed Member From Class: ClassName=Sheet1 Member=D3
+Removed Member From Class: ClassName=Sheet1 Member=D4
+Removed Member From Class: ClassName=Sheet1 Member=D5
+Removed Member From Class: ClassName=Sheet1 Member=D6
+Removed Member From Class: ClassName=Sheet1 Member=JP2
+Removed Member From Class: ClassName=Sheet1 Member=JP3
+Removed Member From Class: ClassName=Sheet1 Member=JP4
+Removed Member From Class: ClassName=Sheet1 Member=JP5
+Removed Member From Class: ClassName=Sheet1 Member=JP6
+Removed Member From Class: ClassName=Sheet1 Member=LED3
+Removed Member From Class: ClassName=Sheet1 Member=LED6
+Removed Member From Class: ClassName=Sheet1 Member=LED7
+Removed Member From Class: ClassName=Sheet1 Member=LED10
+Removed Member From Class: ClassName=Sheet1 Member=LED11
+Removed Member From Class: ClassName=Sheet1 Member=LED12
+Removed Member From Class: ClassName=Sheet1 Member=Q2
+Removed Member From Class: ClassName=Sheet1 Member=Q3
+Removed Member From Class: ClassName=Sheet1 Member=Q4
+Removed Member From Class: ClassName=Sheet1 Member=Q5
+Removed Member From Class: ClassName=Sheet1 Member=Q6
+Removed Member From Class: ClassName=Sheet1 Member=R9
+Removed Member From Class: ClassName=Sheet1 Member=R10
+Removed Member From Class: ClassName=Sheet1 Member=R17
+Removed Member From Class: ClassName=Sheet1 Member=R18
+Removed Member From Class: ClassName=Sheet1 Member=R25
+Removed Member From Class: ClassName=Sheet1 Member=R26
+Removed Member From Class: ClassName=Sheet1 Member=R27
+Removed Member From Class: ClassName=Sheet1 Member=R28
+Removed Member From Class: ClassName=Sheet1 Member=R29
+Removed Member From Class: ClassName=Sheet1 Member=R30
+Removed Member From Class: ClassName=Sheet1 Member=RL2
+Removed Member From Class: ClassName=Sheet1 Member=RL3
+Removed Member From Class: ClassName=Sheet1 Member=RL4
+Removed Member From Class: ClassName=Sheet1 Member=RL5
+Removed Member From Class: ClassName=Sheet1 Member=RL6
+Removed Member From Class: ClassName=Sheet1 Member=U2
+Removed Member From Class: ClassName=Sheet1 Member=U3
+Removed Member From Class: ClassName=Sheet1 Member=U4
+Removed Member From Class: ClassName=Sheet1 Member=U6
+Removed Member From Class: ClassName=Sheet1 Member=U7
+Added Component: Designator=D1(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=D1(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=D1(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=D1(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=D1(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=D1(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(HED2)
+Add component (AddParameter): Name = "Class"; Value = "Connector"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Generic Components"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=Q1(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=Q1(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=Q1(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=Q1(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=Q1(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=Q1(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R3(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R4(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R5(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=RL1(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=RL1(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=RL1(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=RL1(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=RL1(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=RL1(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=U1(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Component: Designator=U1(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Component: Designator=U1(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Component: Designator=U1(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Component: Designator=U1(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Component: Designator=U1(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=VCC5 Pin=D1-2
+Added Pin To Net: NetName=VCC5 Pin=D1-2
+Added Pin To Net: NetName=VCC5 Pin=D1-2
+Added Pin To Net: NetName=VCC5 Pin=D1-2
+Added Pin To Net: NetName=VCC5 Pin=D1-2
+Added Pin To Net: NetName=VCC5 Pin=D1-2
+Added Pin To Net: NetName=NetJP1_1 Pin=JP1-1
+Added Pin To Net: NetName=NetJP1_2 Pin=JP1-2
+Added Pin To Net: NetName=VCC5 Pin=LED4-1
+Added Pin To Net: NetName=VCC5 Pin=LED4-1
+Added Pin To Net: NetName=VCC5 Pin=LED4-1
+Added Pin To Net: NetName=VCC5 Pin=LED4-1
+Added Pin To Net: NetName=VCC5 Pin=LED4-1
+Added Pin To Net: NetName=VCC5 Pin=LED4-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=GND Pin=Q1-1
+Added Pin To Net: NetName=NetQ1_3 Pin=Q1-3
+Added Pin To Net: NetName=OUT_1 Pin=R3-1
+Added Pin To Net: NetName=OUT_2 Pin=R3-1
+Added Pin To Net: NetName=OUT_3 Pin=R3-1
+Added Pin To Net: NetName=OUT_4 Pin=R3-1
+Added Pin To Net: NetName=OUT_5 Pin=R3-1
+Added Pin To Net: NetName=OUT_6 Pin=R3-1
+Added Pin To Net: NetName=NetR3_2 Pin=R3-2
+Added Pin To Net: NetName=NetR4_1 Pin=R4-1
+Added Pin To Net: NetName=NetQ1_3 Pin=R4-2
+Added Pin To Net: NetName=NetJP1_2 Pin=RL1-1
+Added Pin To Net: NetName=VCC5 Pin=RL1-3
+Added Pin To Net: NetName=VCC5 Pin=RL1-3
+Added Pin To Net: NetName=VCC5 Pin=RL1-3
+Added Pin To Net: NetName=VCC5 Pin=RL1-3
+Added Pin To Net: NetName=VCC5 Pin=RL1-3
+Added Pin To Net: NetName=VCC5 Pin=RL1-3
+Added Pin To Net: NetName=NetJP1_1 Pin=RL1-4
+Added Pin To Net: NetName=NetR3_2 Pin=U1-1
+Added Pin To Net: NetName=GND_ISO Pin=U1-2
+Added Pin To Net: NetName=GND_ISO Pin=U1-2
+Added Pin To Net: NetName=GND_ISO Pin=U1-2
+Added Pin To Net: NetName=GND_ISO Pin=U1-2
+Added Pin To Net: NetName=GND_ISO Pin=U1-2
+Added Pin To Net: NetName=GND_ISO Pin=U1-2
+Added Pin To Net: NetName=NetR4_1 Pin=U1-3
+Added Pin To Net: NetName=VCC5 Pin=U1-4
+Added Pin To Net: NetName=VCC5 Pin=U1-4
+Added Pin To Net: NetName=VCC5 Pin=U1-4
+Added Pin To Net: NetName=VCC5 Pin=U1-4
+Added Pin To Net: NetName=VCC5 Pin=U1-4
+Added Pin To Net: NetName=VCC5 Pin=U1-4
+Added Pin To Net: NetName=NetD1_1 Pin=D1-1
+Added Pin To Net: NetName=NetD1_1 Pin=Q1-2
+Added Pin To Net: NetName=NetD1_1 Pin=R5-2
+Added Pin To Net: NetName=NetD1_1 Pin=RL1-5
+Added Net: Name=NetD1_1
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component RL1 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL1 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL1 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL1 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL1 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PC817

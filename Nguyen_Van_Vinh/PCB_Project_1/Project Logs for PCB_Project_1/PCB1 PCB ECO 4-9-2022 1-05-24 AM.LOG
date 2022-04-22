@@ -1,0 +1,34 @@
+Removed Pin From Net: NetName=LIGHT_SS Pin=Arduino1-A2
+Removed Pin From Net: NetName=SDA Pin=Arduino1-A4
+Removed Pin From Net: NetName=SCL Pin=Arduino1-A5
+Removed Pin From Net: NetName=MODE Pin=Arduino1-D3
+Removed Pin From Net: NetName=NEXT Pin=Arduino1-D4
+Removed Pin From Net: NetName=INC Pin=Arduino1-D5
+Removed Pin From Net: NetName=SET_OPEN Pin=Arduino1-D6
+Removed Pin From Net: NetName=SET_CLOSE Pin=Arduino1-D7
+Removed Pin From Net: NetName=RELAY_1 Pin=Arduino1-D8
+Removed Pin From Net: NetName=RELAY_2 Pin=Arduino1-D9
+Removed Pin From Net: NetName=RELAY_3 Pin=Arduino1-D10
+Removed Pin From Net: NetName=RELAY_4 Pin=Arduino1-D11
+Removed Pin From Net: NetName=RELAY_5 Pin=Arduino1-D12
+Removed Pin From Net: NetName=GND_ISO Pin=Arduino1-GND
+Removed Pin From Net: NetName=GND_ISO Pin=Arduino1-GND
+Removed Pin From Net: NetName=VCC5_ISO Pin=Arduino1-VIN
+Added Component: Designator=Arduino1(Arduino Nano)
+Add component (AddParameter): Name = "Value"; Value = "Cau 1A"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=LIGHT_SS Pin=Arduino1-A2
+Added Pin To Net: NetName=SDA Pin=Arduino1-A4
+Added Pin To Net: NetName=SCL Pin=Arduino1-A5
+Added Pin To Net: NetName=MODE Pin=Arduino1-D3
+Added Pin To Net: NetName=NEXT Pin=Arduino1-D4
+Added Pin To Net: NetName=INC Pin=Arduino1-D5
+Added Pin To Net: NetName=SET_OPEN Pin=Arduino1-D6
+Added Pin To Net: NetName=SET_CLOSE Pin=Arduino1-D7
+Added Pin To Net: NetName=RELAY_1 Pin=Arduino1-D8
+Added Pin To Net: NetName=RELAY_2 Pin=Arduino1-D9
+Added Pin To Net: NetName=RELAY_3 Pin=Arduino1-D10
+Added Pin To Net: NetName=RELAY_4 Pin=Arduino1-D11
+Added Pin To Net: NetName=RELAY_5 Pin=Arduino1-D12
+Added Pin To Net: NetName=GND_ISO Pin=Arduino1-GND
+Added Pin To Net: NetName=GND_ISO Pin=Arduino1-GND
+Added Pin To Net: NetName=VCC5_ISO Pin=Arduino1-VIN

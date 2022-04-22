@@ -1,0 +1,24 @@
+Removed Pin From Net: NetName=GND Pin=Coi1-2
+Removed Pin From Net: NetName=+5 Pin=D3-2
+Removed Pin From Net: NetName=GND Pin=LED3-2
+Removed Pin From Net: NetName=GND Pin=Q3-1
+Removed Pin From Net: NetName=COI Pin=R6-1
+Removed Pin From Net: NetName=+12 Pin=RL3-3
+Removed Pin From Net: NetName=+5 Pin=RL3-5
+Removed Pin From Net: NetName=+5 Pin=U4-4
+Removed Member From Class: ClassName=Sheet1 Member=Coi1
+Removed Member From Class: ClassName=Sheet1 Member=D3
+Removed Member From Class: ClassName=Sheet1 Member=LED4
+Removed Member From Class: ClassName=Sheet1 Member=Q3
+Removed Member From Class: ClassName=Sheet1 Member=R7
+Removed Member From Class: ClassName=Sheet1 Member=R8
+Removed Member From Class: ClassName=Sheet1 Member=RL3
+Removed Member From Class: ClassName=Sheet1 Member=U4
+Change Component Designator: OldDesignator=HD5 NewDesignator=HD4
+Change Component Designator: OldDesignator=HD6 NewDesignator=HD5
+Change Component Designator: OldDesignator=LED4 NewDesignator=LED3
+Change Component Designator: OldDesignator=R8 NewDesignator=R6
+Added Pin To Net: NetName=GND Pin=SP1-1
+Added Pin To Net: NetName=COI Pin=SP1-2
+Change Net Name : Old Net Name=NetHD6_1 New Net Name=NetHD5_1
+Added Member To Class: ClassName=Sheet1 Member=Component HD4 Header 3

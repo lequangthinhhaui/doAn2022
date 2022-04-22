@@ -1,0 +1,7 @@
+Change Component Designator: OldDesignator=HD6 NewDesignator=Coi1
+Change Component Designator: OldDesignator=U5 NewDesignator=U4
+Added Component: Designator=SP1(SPK)
+Add component (AddParameter): Name = "Value"; Value = "Speaker Chip"; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetHD6_1 New Net Name=NetCoi1_1
+Added Member To Class: ClassName=Sheet1 Member=Component SP1 Speaker
+Added Room: Name=Sheet1

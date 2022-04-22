@@ -7,9 +7,9 @@
 
 
 //user button
-Button btnMenu(2); 
+Button btnMenu(4); 
 Button btnUp(3); 
-Button btnDown(4); 
+Button btnDown(2); 
 Button btnLeft(5); 
 Button btnRight(6); 
 
@@ -240,8 +240,8 @@ int menuOfState()
 
 int modeOfState()
 {
-  if (btnLeft.toggled())
-    if (btnLeft.read() == Button::PRESSED)
+  if (btnUp.toggled())
+    if (btnUp.read() == Button::PRESSED)
     {
         modeState ++;
         if(modeState > 1)
@@ -251,8 +251,8 @@ int modeOfState()
         Serial.println(modeState);
     }
 
-  if (btnRight.toggled())
-    if (btnRight.read() == Button::PRESSED)
+  if (btnDown.toggled())
+    if (btnDown.read() == Button::PRESSED)
     {
         modeState --;
         if(modeState < 0)
@@ -266,8 +266,8 @@ int modeOfState()
 
 int switchModeState()
 {
-  if (btnLeft.toggled())
-    if (btnLeft.read() == Button::PRESSED)
+  if (btnRight.toggled())
+    if (btnRight.read() == Button::PRESSED)
     {
         swModeState ++;
         if(swModeState > 11)
@@ -277,8 +277,8 @@ int switchModeState()
         Serial.println(swModeState);
     }
 
-  if (btnRight.toggled())
-    if (btnRight.read() == Button::PRESSED)
+  if (btnLeft.toggled())
+    if (btnLeft.read() == Button::PRESSED)
     {
         swModeState --;
         if(swModeState < 0)
@@ -708,7 +708,7 @@ void rtcInit()
     Serial.flush();
     while (1) delay(10);
   }
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));  
+//    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));  
 }
 
 

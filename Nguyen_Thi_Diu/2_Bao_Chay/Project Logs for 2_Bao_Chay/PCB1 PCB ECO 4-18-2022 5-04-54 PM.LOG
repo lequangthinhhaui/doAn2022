@@ -1,0 +1,7 @@
+Change Component Designator: OldDesignator=HD4 NewDesignator=HD5
+Change Component Designator: OldDesignator=HD5 NewDesignator=HD6
+Added Component: Designator=HD4(HED4)
+Add component (AddParameter): Name = "Value"; Value = "Header 4"; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetHD5_1 New Net Name=NetHD6_1
+Added Member To Class: ClassName=Sheet1 Member=Component HD6 Header 2
+Added Room: Name=Sheet1
