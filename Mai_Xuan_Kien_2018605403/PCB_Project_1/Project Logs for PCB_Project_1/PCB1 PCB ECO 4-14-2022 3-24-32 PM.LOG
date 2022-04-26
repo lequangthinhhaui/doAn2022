@@ -1,0 +1,49 @@
+Added Member To Class: ClassName=Sheet1 Member=Component BT1 SET_CLOSE
+Added Member To Class: ClassName=Sheet1 Member=Component BT3 SET_CLOSE
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Header2
+Added Member To Class: ClassName=Sheet1 Member=Component C2 Header2
+Added Member To Class: ClassName=Sheet1 Member=Component C4 104
+Added Member To Class: ClassName=Sheet1 Member=Component C5 104
+Added Member To Class: ClassName=Sheet1 Member=Component C6 104
+Added Member To Class: ClassName=Sheet1 Member=Component C8 Header2
+Added Member To Class: ClassName=Sheet1 Member=Component C11 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component C12 104
+Added Member To Class: ClassName=Sheet1 Member=Component C13 104
+Added Member To Class: ClassName=Sheet1 Member=Component C14 Header2
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D3 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D5 100v
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component JP2 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component JP3 Header 2_1
+Added Member To Class: ClassName=Sheet1 Member=Component LED1 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED2 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED3 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED6 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED8 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED10 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q2 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q4 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component R1 47K
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R7 4.7K
+Added Member To Class: ClassName=Sheet1 Member=Component R10 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R13 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R17 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R18 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R19 47K
+Added Member To Class: ClassName=Sheet1 Member=Component R21 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R23 4.7K
+Added Member To Class: ClassName=Sheet1 Member=Component R25 100R
+Added Member To Class: ClassName=Sheet1 Member=Component RL1 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL2 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL3 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL4 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component RL5 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component U1 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U2 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U5 ESP32_MODULE copy

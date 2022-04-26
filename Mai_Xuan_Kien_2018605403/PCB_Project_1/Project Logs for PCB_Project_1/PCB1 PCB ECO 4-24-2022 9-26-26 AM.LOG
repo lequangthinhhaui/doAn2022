@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=OUT_BTN_6 Pin=JP2-2
+Removed Pin From Net: NetName=OUT_BTN_5 Pin=JP2-3
+Removed Pin From Net: NetName=OUT_BTN_0 Pin=JP2-4
+Added Pin To Net: NetName=OUT_BTN_0 Pin=JP2-2
+Added Pin To Net: NetName=OUT_BTN_6 Pin=JP2-3
+Added Pin To Net: NetName=OUT_BTN_5 Pin=JP2-4

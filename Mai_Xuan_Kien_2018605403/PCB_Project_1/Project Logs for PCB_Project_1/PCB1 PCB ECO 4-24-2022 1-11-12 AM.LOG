@@ -1,0 +1,172 @@
+Removed Pin From Net: NetName=GND_ISO Pin=C11-1
+Removed Pin From Net: NetName=VCC33_ISO Pin=C11-3
+Removed Pin From Net: NetName=GND_ISO Pin=C14-1
+Removed Pin From Net: NetName=VCC33_ISO Pin=C14-3
+Removed Pin From Net: NetName=GND_ISO Pin=C15-1
+Removed Pin From Net: NetName=VCC33_ISO Pin=C15-3
+Removed Pin From Net: NetName=GND_ISO Pin=C16-1
+Removed Pin From Net: NetName=VCC5_ISO Pin=C16-3
+Removed Pin From Net: NetName=GND_ISO Pin=C17-1
+Removed Pin From Net: NetName=VCC5_ISO Pin=C17-3
+Removed Pin From Net: NetName=COM_O_1 Pin=P2-1
+Removed Pin From Net: NetName=OUT_RL3 Pin=P2-2
+Removed Pin From Net: NetName=OUT_RL2 Pin=P2-3
+Removed Pin From Net: NetName=OUT_RL1 Pin=P2-4
+Removed Pin From Net: NetName=COM_O_2 Pin=P2-5
+Removed Pin From Net: NetName=OUT_RL4 Pin=P2-6
+Removed Pin From Net: NetName=OUT_RL5 Pin=P2-7
+Removed Pin From Net: NetName=OUT_RL6 Pin=P2-8
+Removed Pin From Net: NetName=GND_ISO Pin=P3-1
+Removed Pin From Net: NetName=OUT_BTN_6 Pin=P3-2
+Removed Pin From Net: NetName=OUT_BTN_5 Pin=P3-3
+Removed Pin From Net: NetName=OUT_BTN_4 Pin=P3-4
+Removed Pin From Net: NetName=GND_ISO Pin=P3-5
+Removed Pin From Net: NetName=OUT_BTN_3 Pin=P3-6
+Removed Pin From Net: NetName=OUT_BTN_2 Pin=P3-7
+Removed Pin From Net: NetName=OUT_BTN_1 Pin=P3-8
+Removed Pin From Net: NetName=GND_ISO Pin=U7-17
+Removed Member From Class: ClassName=Sheet1 Member=C15
+Removed Member From Class: ClassName=Sheet1 Member=C16
+Removed Member From Class: ClassName=Sheet1 Member=C17
+Removed Member From Class: ClassName=Sheet1 Member=C18
+Removed Member From Class: ClassName=Sheet1 Member=P2
+Removed Member From Class: ClassName=Sheet1 Member=P3
+Change Component Designator: OldDesignator=C2 NewDesignator=C1
+Change Component Designator: OldDesignator=C3 NewDesignator=C2
+Change Component Designator: OldDesignator=C4 NewDesignator=C3
+Change Component Designator: OldDesignator=C5 NewDesignator=C4
+Change Component Designator: OldDesignator=C6 NewDesignator=C5
+Change Component Designator: OldDesignator=C7 NewDesignator=C6
+Change Component Designator: OldDesignator=C8 NewDesignator=C7
+Change Component Designator: OldDesignator=C9 NewDesignator=C8
+Change Component Designator: OldDesignator=C10 NewDesignator=C9
+Change Component Designator: OldDesignator=C12 NewDesignator=C10
+Change Component Designator: OldDesignator=C13 NewDesignator=C11
+Change Component Designator: OldDesignator=C18 NewDesignator=C13
+Change Component Designator: OldDesignator=C19 NewDesignator=C12
+Added Component: Designator=C14(tu gom)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH004761"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "So_Chan"; Value = "2"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "T? g?m 104 100nF 50V"; VariantName = "[No Variations]"
+Added Component: Designator=D7(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=JP1(Header8)
+Add component (AddParameter): Name = "Value"; Value = "Connector 8"; VariantName = "[No Variations]"
+Added Component: Designator=JP2(Header8)
+Add component (AddParameter): Name = "Value"; Value = "Connector 8"; VariantName = "[No Variations]"
+Added Component: Designator=LED13(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED14(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=Q7(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=R37(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R38(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R39(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R40(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R41(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R42(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=RL7(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=U8(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND_ISO Pin=C14-2
+Added Pin To Net: NetName=VCC5 Pin=D7-2
+Added Pin To Net: NetName=COM_O_1 Pin=JP1-1
+Added Pin To Net: NetName=OUT_RL3 Pin=JP1-2
+Added Pin To Net: NetName=OUT_RL2 Pin=JP1-3
+Added Pin To Net: NetName=OUT_RL1 Pin=JP1-4
+Added Pin To Net: NetName=OUT_RL4 Pin=JP1-6
+Added Pin To Net: NetName=OUT_RL5 Pin=JP1-7
+Added Pin To Net: NetName=OUT_RL6 Pin=JP1-8
+Added Pin To Net: NetName=GND_ISO Pin=JP2-1
+Added Pin To Net: NetName=OUT_BTN_6 Pin=JP2-2
+Added Pin To Net: NetName=OUT_BTN_5 Pin=JP2-3
+Added Pin To Net: NetName=OUT_BTN_4 Pin=JP2-4
+Added Pin To Net: NetName=OUT_BTN_3 Pin=JP2-6
+Added Pin To Net: NetName=OUT_BTN_2 Pin=JP2-7
+Added Pin To Net: NetName=OUT_BTN_1 Pin=JP2-8
+Added Pin To Net: NetName=VCC5_ISO Pin=LED13-1
+Added Pin To Net: NetName=VCC5 Pin=LED14-1
+Added Pin To Net: NetName=GND Pin=Q7-1
+Added Pin To Net: NetName=VCC5_ISO Pin=R37-2
+Added Pin To Net: NetName=VCC5 Pin=RL7-3
+Added Pin To Net: NetName=COM_O_1 Pin=RL7-4
+Added Pin To Net: NetName=GND_ISO Pin=U8-2
+Added Pin To Net: NetName=VCC5 Pin=U8-4
+Change Net Name : Old Net Name=NetC3_1 New Net Name=NetC2_1
+Added Pin To Net: NetName=IN_0 Pin=C14-1
+Added Pin To Net: NetName=IN_0 Pin=R39-1
+Added Pin To Net: NetName=IN_0 Pin=U7-13
+Added Net: Name=IN_0
+Added Pin To Net: NetName=NetD7_1 Pin=D7-1
+Added Pin To Net: NetName=NetD7_1 Pin=Q7-2
+Added Pin To Net: NetName=NetD7_1 Pin=R40-2
+Added Pin To Net: NetName=NetD7_1 Pin=RL7-5
+Added Net: Name=NetD7_1
+Added Pin To Net: NetName=NetLED13_2 Pin=LED13-2
+Added Pin To Net: NetName=NetLED13_2 Pin=R38-2
+Added Net: Name=NetLED13_2
+Added Pin To Net: NetName=NetLED14_2 Pin=LED14-2
+Added Pin To Net: NetName=NetLED14_2 Pin=R40-1
+Added Net: Name=NetLED14_2
+Added Pin To Net: NetName=NetQ7_3 Pin=Q7-3
+Added Pin To Net: NetName=NetQ7_3 Pin=R42-2
+Added Net: Name=NetQ7_3
+Added Pin To Net: NetName=NetR41_2 Pin=R41-2
+Added Pin To Net: NetName=NetR41_2 Pin=U8-1
+Added Net: Name=NetR41_2
+Added Pin To Net: NetName=NetR42_1 Pin=R42-1
+Added Pin To Net: NetName=NetR42_1 Pin=U8-3
+Added Net: Name=NetR42_1
+Added Pin To Net: NetName=OUT_0 Pin=R41-1
+Added Pin To Net: NetName=OUT_0 Pin=U7-12
+Added Net: Name=OUT_0
+Added Pin To Net: NetName=OUT_BTN_0 Pin=JP2-5
+Added Pin To Net: NetName=OUT_BTN_0 Pin=R37-1
+Added Pin To Net: NetName=OUT_BTN_0 Pin=R38-1
+Added Pin To Net: NetName=OUT_BTN_0 Pin=R39-2
+Added Net: Name=OUT_BTN_0
+Added Pin To Net: NetName=OUT_RL0 Pin=JP1-5
+Added Pin To Net: NetName=OUT_RL0 Pin=RL7-1
+Added Net: Name=OUT_RL0
+Added Member To Class: ClassName=Sheet1 Member=Component D7 100v
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 JP8
+Added Member To Class: ClassName=Sheet1 Member=Component JP2 JP8
+Added Member To Class: ClassName=Sheet1 Member=Component LED13 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED14 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component Q7 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component R37 10K
+Added Member To Class: ClassName=Sheet1 Member=Component R38 220R
+Added Member To Class: ClassName=Sheet1 Member=Component R39 1K
+Added Member To Class: ClassName=Sheet1 Member=Component R40 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R41 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R42 510R
+Added Member To Class: ClassName=Sheet1 Member=Component RL7 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component U8 PC817
+Added Room: Name=Sheet1

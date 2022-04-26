@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=OUT_RL0 Pin=JP1-2
+Removed Pin From Net: NetName=OUT_RL2 Pin=JP1-3
+Removed Pin From Net: NetName=OUT_RL1 Pin=JP1-4
+Removed Pin From Net: NetName=OUT_RL3 Pin=JP1-5
+Removed Pin From Net: NetName=OUT_RL5 Pin=JP1-7
+Removed Pin From Net: NetName=OUT_RL6 Pin=JP1-8
+Added Pin To Net: NetName=OUT_RL6 Pin=JP1-2
+Added Pin To Net: NetName=OUT_RL0 Pin=JP1-3
+Added Pin To Net: NetName=OUT_RL3 Pin=JP1-4
+Added Pin To Net: NetName=OUT_RL5 Pin=JP1-5
+Added Pin To Net: NetName=OUT_RL2 Pin=JP1-7
+Added Pin To Net: NetName=OUT_RL1 Pin=JP1-8

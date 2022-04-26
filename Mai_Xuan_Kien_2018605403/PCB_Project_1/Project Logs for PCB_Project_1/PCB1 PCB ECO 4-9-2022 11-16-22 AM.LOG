@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=SET_OPEN Pin=Arduino1-D6
+Removed Pin From Net: NetName=SET_CLOSE Pin=Arduino1-D7
+Added Pin To Net: NetName=SET_CLOSE Pin=Arduino1-D6
+Added Pin To Net: NetName=SET_OPEN Pin=Arduino1-D7
