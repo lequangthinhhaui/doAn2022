@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=GND Pin=HILINK1-3
+Removed Pin From Net: NetName=VCC5 Pin=HILINK1-4
+Added Pin To Net: NetName=220V~F1 Pin=HILINK1-1
+Added Pin To Net: NetName=0V~F1 Pin=HILINK1-2
+Added Member To Class: ClassName=Sheet1 Member=Component HILINK1 HILINK
+Added Room: Name=Sheet1

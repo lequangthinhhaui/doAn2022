@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=PWM1 Pin=Arduino1-D3
+Removed Pin From Net: NetName=PWM2 Pin=Arduino1-D5
+Added Pin To Net: NetName=PWM2 Pin=Arduino1-D3
+Added Pin To Net: NetName=PWM1 Pin=Arduino1-D5

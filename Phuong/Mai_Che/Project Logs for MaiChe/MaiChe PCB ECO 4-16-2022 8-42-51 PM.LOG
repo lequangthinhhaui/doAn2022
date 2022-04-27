@@ -1,0 +1,102 @@
+Removed Pin From Net: NetName=+12 Pin=D1-2
+Removed Pin From Net: NetName=GND Pin=DHT22-1
+Removed Pin From Net: NetName=+5 Pin=DHT22-3
+Removed Pin From Net: NetName=GND Pin=Do_Am_Dat-3
+Removed Pin From Net: NetName=+5 Pin=Do_Am_Dat-4
+Removed Pin From Net: NetName=+12 Pin=JDC-1
+Removed Pin From Net: NetName=GND Pin=JDC-2
+Removed Pin From Net: NetName=GND Pin=JDC-3
+Removed Pin From Net: NetName=GND Pin=LED4-2
+Removed Pin From Net: NetName=GND Pin=Q1-1
+Removed Pin From Net: NetName=INT1 Pin=R1-2
+Removed Pin From Net: NetName=INT2 Pin=R3-2
+Removed Pin From Net: NetName=INT3 Pin=R5-2
+Removed Pin From Net: NetName=+5 Pin=R8-1
+Removed Pin From Net: NetName=+12 Pin=RL1-5
+Removed Pin From Net: NetName=NetLED1_1 Pin=U1-2
+Removed Pin From Net: NetName=+12 Pin=U1-4
+Removed Pin From Net: NetName=DATA_Bright Pin=U2-22
+Removed Pin From Net: NetName=MODE Pin=U2-24
+Removed Pin From Net: NetName=INT3 Pin=U2-26
+Removed Pin From Net: NetName=INT1 Pin=U2-27
+Removed Pin From Net: NetName=INT2 Pin=U2-28
+Removed Member From Class: ClassName=Sheet1 Member=D1
+Removed Member From Class: ClassName=Sheet1 Member=DHT22
+Removed Member From Class: ClassName=Sheet1 Member=Do_Am_Dat
+Removed Member From Class: ClassName=Sheet1 Member=JDC
+Removed Member From Class: ClassName=Sheet1 Member=LED4
+Removed Member From Class: ClassName=Sheet1 Member=Q1
+Removed Member From Class: ClassName=Sheet1 Member=R2
+Removed Member From Class: ClassName=Sheet1 Member=R8
+Removed Member From Class: ClassName=Sheet1 Member=RL1
+Removed Member From Class: ClassName=Sheet1 Member=U1
+Change Component Footprint: Designator=HD2 Old Footprint=HED3 New Footprint=HED2
+Change Component Comment : Designator=R1 Old Comment=1k New Comment=10K
+Change Component Comment : Designator=HD2 Old Comment=Header 3 New Comment=Header 2
+Change component parameters: Designator = "HD2" ("HD2"); Footprint = "HED3"; UniqueID = "\VESSLRZJ" ("\VESSLRZJ")
+Change component parameters (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=INT(JP 1x4 CC)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001265"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Jump Ðõn Cái 2.54MM 1x40P Cong"; VariantName = "[No Variations]"
+Added Component: Designator=Mua(JP 1x4 CC)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001265"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Jump Ðõn Cái 2.54MM 1x40P Cong"; VariantName = "[No Variations]"
+Added Component: Designator=Position1(JP3)
+Add component (AddParameter): Name = "Value"; Value = "J3"; VariantName = "[No Variations]"
+Added Component: Designator=Position2(JP3)
+Add component (AddParameter): Name = "Value"; Value = "J3"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=HD2-1
+Added Pin To Net: NetName=+5 Pin=HD2-2
+Added Pin To Net: NetName=INT3 Pin=INT-2
+Added Pin To Net: NetName=INT2 Pin=INT-3
+Added Pin To Net: NetName=INT1 Pin=INT-4
+Added Pin To Net: NetName=GND Pin=Mua-3
+Added Pin To Net: NetName=+5 Pin=Mua-4
+Added Pin To Net: NetName=GND Pin=Position1-2
+Added Pin To Net: NetName=+5 Pin=Position1-3
+Added Pin To Net: NetName=GND Pin=Position2-2
+Added Pin To Net: NetName=+5 Pin=Position2-3
+Added Pin To Net: NetName=+5 Pin=R1-1
+Added Pin To Net: NetName=NetLED1_1 Pin=SW2-1
+Added Pin To Net: NetName=INT1 Pin=U2-8
+Added Pin To Net: NetName=INT2 Pin=U2-9
+Added Pin To Net: NetName=INT3 Pin=U2-10
+Added Pin To Net: NetName=INT3 Pin=U2-11
+Added Pin To Net: NetName=DATA_Bright Pin=U2-20
+Added Pin To Net: NetName=MODE Pin=U2-23
+Added Pin To Net: NetName=DATA1 Pin=Position1-1
+Added Pin To Net: NetName=DATA1 Pin=U2-24
+Added Net: Name=DATA1
+Added Pin To Net: NetName=DATA2 Pin=Position2-1
+Added Pin To Net: NetName=DATA2 Pin=U2-25
+Added Net: Name=DATA2
+Added Pin To Net: NetName=DATA_Mua Pin=Mua-1
+Added Pin To Net: NetName=DATA_Mua Pin=U2-21
+Added Net: Name=DATA_Mua
+Added Pin To Net: NetName=INT4 Pin=INT-1
+Added Net: Name=INT4
+Added Pin To Net: NetName=MOTOR1 Pin=R3-2
+Added Pin To Net: NetName=MOTOR1 Pin=U2-27
+Added Net: Name=MOTOR1
+Added Pin To Net: NetName=MOTOR2 Pin=R5-2
+Added Pin To Net: NetName=MOTOR2 Pin=U2-28
+Added Net: Name=MOTOR2
+Added Pin To Net: NetName=Reset Pin=C1-2
+Added Pin To Net: NetName=Reset Pin=R1-2
+Added Pin To Net: NetName=Reset Pin=SW2-2
+Added Pin To Net: NetName=Reset Pin=U2-22
+Added Net: Name=Reset
+Change Class Name : Old Net Name=Sheet1 New Net Name=MaiChe
+Added Member To Class: ClassName=MaiChe Member=Component INT JP 1x4 2.54
+Added Member To Class: ClassName=MaiChe Member=Component Mua JP 1x4 2.54
+Added Member To Class: ClassName=MaiChe Member=Component Position1 Jumper 3
+Added Member To Class: ClassName=MaiChe Member=Component Position2 Jumper 3
+Added Room: Name=MaiChe

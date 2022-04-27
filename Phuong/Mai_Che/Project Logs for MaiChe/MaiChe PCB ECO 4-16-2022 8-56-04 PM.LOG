@@ -1,0 +1,4 @@
+Added Component: Designator=D1(D1A)
+Add component (AddParameter): Name = "Value"; Value = "1N4007"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=MaiChe Member=Component D1 1N4007
+Added Room: Name=MaiChe
