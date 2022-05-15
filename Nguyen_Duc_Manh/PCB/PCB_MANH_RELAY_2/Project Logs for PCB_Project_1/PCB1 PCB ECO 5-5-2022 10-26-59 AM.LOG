@@ -1,0 +1,28 @@
+Removed Pin From Net: NetName=N Pin=KF1-1
+Removed Pin From Net: NetName=L Pin=KF1-2
+Added Pin To Net: NetName=L Pin=KF1-1
+Added Pin To Net: NetName=N Pin=KF1-2
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component C2 R46KF3100JMP0K
+Added Member To Class: ClassName=Sheet1 Member=Component D1 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D2 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D3 100v
+Added Member To Class: ClassName=Sheet1 Member=Component D4 100v
+Added Member To Class: ClassName=Sheet1 Member=Component JP1 JP 1x9 2.54
+Added Member To Class: ClassName=Sheet1 Member=Component LED1 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED2 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED3 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component LED4 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component Q1 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q2 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q3 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q4 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component R1 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R2 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R3 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R4 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R5 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R6 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R7 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R8 510R
+Added Room: Name=Sheet1

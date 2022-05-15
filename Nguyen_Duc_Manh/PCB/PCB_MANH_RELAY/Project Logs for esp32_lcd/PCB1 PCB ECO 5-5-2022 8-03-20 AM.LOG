@@ -1,0 +1,45 @@
+Removed Pin From Net: NetName=GND Pin=JP1-9
+Change Component Designator: OldDesignator=L1 NewDesignator=L4
+Change Component Designator: OldDesignator=L2 NewDesignator=L3
+Change Component Designator: OldDesignator=L3 NewDesignator=L2
+Change Component Designator: OldDesignator=L4 NewDesignator=L1
+Change Component Designator: OldDesignator=R1 NewDesignator=R4
+Change Component Designator: OldDesignator=R2 NewDesignator=R3
+Change Component Designator: OldDesignator=R3 NewDesignator=R2
+Change Component Designator: OldDesignator=R4 NewDesignator=R1
+Change Component Designator: OldDesignator=T1 NewDesignator=T4
+Change Component Designator: OldDesignator=T2 NewDesignator=T3
+Change Component Designator: OldDesignator=T3 NewDesignator=T2
+Change Component Designator: OldDesignator=T4 NewDesignator=T1
+Added Pin To Net: NetName=GND Pin=JP1-1
+Change Net Name : Old Net Name=NetJP1_7 New Net Name=LED_3
+Change Net Name : Old Net Name=NetL1_1 New Net Name=NetL4_1
+Change Net Name : Old Net Name=NetL2_1 New Net Name=NetL3_1
+Change Net Name : Old Net Name=NetL3_1 New Net Name=NetL2_1
+Change Net Name : Old Net Name=NetL4_1 New Net Name=NetL1_1
+Added Pin To Net: NetName=LED_1 Pin=JP1-3
+Added Pin To Net: NetName=LED_1 Pin=R1-1
+Added Net: Name=LED_1
+Added Pin To Net: NetName=LED_2 Pin=JP1-5
+Added Pin To Net: NetName=LED_2 Pin=R2-1
+Added Net: Name=LED_2
+Added Pin To Net: NetName=LED_4 Pin=JP1-9
+Added Pin To Net: NetName=LED_4 Pin=R4-1
+Added Net: Name=LED_4
+Added Pin To Net: NetName=TOUCH1 Pin=JP1-2
+Added Pin To Net: NetName=TOUCH1 Pin=T1-1
+Added Net: Name=TOUCH1
+Added Pin To Net: NetName=TOUCH2 Pin=JP1-4
+Added Pin To Net: NetName=TOUCH2 Pin=T2-1
+Added Net: Name=TOUCH2
+Added Pin To Net: NetName=TOUCH3 Pin=JP1-6
+Added Pin To Net: NetName=TOUCH3 Pin=T3-1
+Added Net: Name=TOUCH3
+Added Pin To Net: NetName=TOUCH4 Pin=JP1-8
+Added Pin To Net: NetName=TOUCH4 Pin=T4-1
+Added Net: Name=TOUCH4
+Added Member To Class: ClassName=Sheet1 Member=Component T1 F1A
+Added Member To Class: ClassName=Sheet1 Member=Component T2 F1A
+Added Member To Class: ClassName=Sheet1 Member=Component T3 F1A
+Added Member To Class: ClassName=Sheet1 Member=Component T4 F1A
+Added Room: Name=Sheet1

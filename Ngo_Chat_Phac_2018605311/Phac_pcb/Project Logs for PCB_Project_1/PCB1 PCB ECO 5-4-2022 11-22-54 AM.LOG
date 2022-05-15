@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=OUT_BTN_6 Pin=JP1-2
+Removed Pin From Net: NetName=OUT_BTN_1 Pin=JP1-5
+Added Pin To Net: NetName=OUT_BTN_1 Pin=JP1-2
+Added Pin To Net: NetName=OUT_BTN_6 Pin=JP1-5
+Added Member To Class: ClassName=Sheet1 Member=Component C17 Header4

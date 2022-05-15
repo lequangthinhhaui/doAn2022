@@ -5,6 +5,11 @@
 #include <U8g2lib.h>
 #include <SPI.h>
 
+
+//ota update
+#include <ESPAsyncWebServer.h>
+#include <AsyncElegantOTA.h>
+
 //pzem
 #include <PZEM004Tv30.h>
 
@@ -18,10 +23,11 @@ void mqttHandle();
 void u8g2_prepare(void);
 void updatePzem();
 void converToStr();
+void otaUpdate();
 
 //define wifi infor
-#define ssid "Zoro"
-#define password "minhdien04"
+#define ssid "vanloc"
+#define password "vanloc123"
 
 //define broker infor
 #define mqtt_server "broker.hivemq.com" 
@@ -40,6 +46,9 @@ PZEM004Tv30 pzem(Serial2,16,17);
 //init LCD screen
 U8G2_ST7920_128X64_F_SW_SPI u8g2(U8G2_R0, /* clock=*/ 18, /* data=*/ 23, /* CS=*/ 5, /* reset=*/ 22); // ESP32
 
+
+//inti ota update
+AsyncWebServer server(80);
 
 //user variable
 long lastMsg = 0;
@@ -81,6 +90,8 @@ void setup(void) {
   u8g2.begin();
   Serial.begin(115200);
   setup_wifi();
+  otaUpdate();
+
   client.setServer(mqtt_server, mqtt_port); 
 }
 
@@ -165,4 +176,11 @@ void converToStr()
   dtostrf(fAmp, 6, 2, chAmp);
   sprintf(chVolOut, "Dien Ap(V):%s", chVol);
   sprintf(chAmpOut, "Dong Dien(A):%s", chAmp);  
+}
+
+
+void otaUpdate()
+{
+  AsyncElegantOTA.begin(&server);
+  server.begin();
 }

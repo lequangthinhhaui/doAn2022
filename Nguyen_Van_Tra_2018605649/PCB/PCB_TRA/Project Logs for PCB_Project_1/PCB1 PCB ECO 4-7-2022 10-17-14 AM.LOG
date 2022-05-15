@@ -1,0 +1,43 @@
+Change Component Designator: OldDesignator=Arduino? NewDesignator=Arduino1
+Change Component Designator: OldDesignator=U? NewDesignator=U2
+Added Component: Designator=B1(B0505S1W)
+Add component (AddParameter): Name = "Arrow Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Arrow Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Datasheet Link"; Value = "https://www.mornsun-power.com/uploads/pdf/B_D-1W.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Height"; Value = "10.41mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Name"; Value = "Mornsun"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer_Part_Number"; Value = "B0505S-1W"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Part Number"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mouser Price/Stock"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=C1(CP2/5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "C0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VALUE"; Value = "C?"; VariantName = "[No Variations]"
+Added Component: Designator=C2(CP2/5)
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageReference"; Value = "C0805"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "VALUE"; Value = "C?"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=B1-1
+Added Pin To Net: NetName=GND_ISO Pin=B1-3
+Added Pin To Net: NetName=VCC5_ISO Pin=B1-4
+Added Pin To Net: NetName=VCC5_ISO Pin=C1-1
+Added Pin To Net: NetName=GND_ISO Pin=C1-2
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=GND Pin=U2-1
+Added Pin To Net: NetName=SCL Pin=Arduino1-A5
+Added Pin To Net: NetName=SCL Pin=U2-4
+Added Net: Name=SCL
+Added Pin To Net: NetName=SDA Pin=Arduino1-A4
+Added Pin To Net: NetName=SDA Pin=U2-3
+Added Net: Name=SDA
+Added Pin To Net: NetName=VCC5 Pin=B1-2
+Added Pin To Net: NetName=VCC5 Pin=C2-1
+Added Pin To Net: NetName=VCC5 Pin=U2-2
+Added Net: Name=VCC5
+Added Member To Class: ClassName=Sheet1 Member=Component B1 B0505S1W
+Added Member To Class: ClassName=Sheet1 Member=Component C1 Cap Pol3
+Added Member To Class: ClassName=Sheet1 Member=Component C2 Cap Pol3

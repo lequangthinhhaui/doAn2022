@@ -102,7 +102,7 @@ void setup()
   AsyncElegantOTA.begin(&server);
   server.begin();
 }
- 
+
 void loop(){
   temperStr = readDHTTemp();
   humiStr = readDHTHum();
@@ -112,12 +112,15 @@ void loop(){
   lcd.print("Temp: ");
   lcd.setCursor(6, 0);
   lcd.print(temper);
+  lcd.setCursor(13, 0);
+  lcd.write(0xDF);
+  lcd.print("C");
   //set con tro hang thu hai, cot thu nhat
   lcd.setCursor(0,1);
   lcd.print("Humi: ");
   lcd.setCursor(6, 1);
   lcd.print(humi);
-
+  lcd.setCursor(13, 1);
+  lcd.print("%");
   delay(5000);
-  
 }

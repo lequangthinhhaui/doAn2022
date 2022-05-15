@@ -1,0 +1,1424 @@
+[
+    {
+        "id": "e7fcbac961d2a689",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f2b757a9cc77732c",
+        "type": "ui_gauge",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 3,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Nhiệt độ môi trường",
+        "label": "độ C",
+        "format": "{{msg.payload.nhietdo| number: 2}}",
+        "min": "-40",
+        "max": "125",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 600,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "34ae4a558706435f",
+        "type": "ui_gauge",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Độ ẩm môi trường",
+        "label": "%",
+        "format": "{{msg.payload.doammoitruong| number: 2}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 591.2499828338623,
+        "y": 1207.499963760376,
+        "wires": [],
+        "inputLabels": [
+            "Hello1"
+        ]
+    },
+    {
+        "id": "9b9df1e1e5d0f9a9",
+        "type": "ui_gauge",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 7,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Độ ẩm đất",
+        "label": "%",
+        "format": "{{msg.payload.doamdat}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 570,
+        "y": 1360,
+        "wires": []
+    },
+    {
+        "id": "c50250b7c278df79",
+        "type": "ui_gauge",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 5,
+        "width": 6,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Ánh sáng",
+        "label": "%",
+        "format": "{{msg.payload.dosang}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 560,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "1135c7792a7d1274",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforMoitruong",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 1240,
+        "wires": [
+            [
+                "34ae4a558706435f",
+                "9b9df1e1e5d0f9a9",
+                "c50250b7c278df79",
+                "f2b757a9cc77732c"
+            ]
+        ]
+    },
+    {
+        "id": "b58ea848a8be0384",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 33,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Set Auto",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "11",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1660,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "ad03714395feef0e",
+        "type": "mqtt out",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/controlThietBi",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "02770b460b435349",
+        "x": 540,
+        "y": 1880,
+        "wires": []
+    },
+    {
+        "id": "3d322dc0f817c687",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 34,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Set Man",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "10",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1720,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "26d3e98f65b0e374",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 42,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Bật Quạt",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "41",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1820,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "c1c8286ce09e26db",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 43,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Tắt Quạt",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "40",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1880,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "3577d134080f6614",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 36,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Bật Đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "21",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 1960,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "82389820b240cbb9",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 37,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Tắt Đèn",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "20",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 2020,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "cafba2bcc49a59c3",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 39,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Bật Bơm",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "31",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 2120,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "8125ae335a258acc",
+        "type": "ui_button",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "group": "b7bf5aeca9648f7b",
+        "order": 40,
+        "width": 2,
+        "height": 1,
+        "passthru": false,
+        "label": "Tắt Bơm",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "30",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 2180,
+        "wires": [
+            [
+                "ad03714395feef0e"
+            ]
+        ]
+    },
+    {
+        "id": "638d57c6bd20da8d",
+        "type": "mqtt out",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/nguongMoiTruong",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "02770b460b435349",
+        "x": 1150,
+        "y": 1560,
+        "wires": []
+    },
+    {
+        "id": "b946cf21aecb8a22",
+        "type": "ui_form",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "label": "Ngưỡng Nhiệt Độ",
+        "group": "b7bf5aeca9648f7b",
+        "order": 46,
+        "width": 9,
+        "height": 1,
+        "options": [
+            {
+                "label": "Ngưỡng Nhiệt Độ",
+                "value": "nhietdo",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "nhietdo": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": false,
+        "className": "",
+        "x": 610,
+        "y": 1500,
+        "wires": [
+            [
+                "4d4c7055d37b4a07"
+            ]
+        ]
+    },
+    {
+        "id": "b2d004044e7e9c28",
+        "type": "debug",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 1700,
+        "wires": []
+    },
+    {
+        "id": "4d4c7055d37b4a07",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nmsg.payload =msg.payload.nhietdo + \"A\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1500,
+        "wires": [
+            [
+                "638d57c6bd20da8d"
+            ]
+        ]
+    },
+    {
+        "id": "441489fcdd92314a",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nmsg.payload =msg.payload.doamdat + \"B\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1560,
+        "wires": [
+            [
+                "638d57c6bd20da8d"
+            ]
+        ]
+    },
+    {
+        "id": "af94dca85051d1c0",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nmsg.payload =msg.payload.anhsang + \"C\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1620,
+        "wires": [
+            [
+                "638d57c6bd20da8d"
+            ]
+        ]
+    },
+    {
+        "id": "50fad230da3022dc",
+        "type": "ui_form",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "label": "Ngưỡng Độ Ẩm Đất",
+        "group": "b7bf5aeca9648f7b",
+        "order": 50,
+        "width": 9,
+        "height": 1,
+        "options": [
+            {
+                "label": "Ngưỡng Độ Ẩm Đất",
+                "value": "doamdat",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "doamdat": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 620,
+        "y": 1560,
+        "wires": [
+            [
+                "441489fcdd92314a"
+            ]
+        ]
+    },
+    {
+        "id": "f1f8fbaad5b59265",
+        "type": "ui_form",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "label": "Ngưỡng Ánh Sáng",
+        "group": "b7bf5aeca9648f7b",
+        "order": 54,
+        "width": 9,
+        "height": 1,
+        "options": [
+            {
+                "label": "Ngưỡng Ánh Sáng",
+                "value": "anhsang",
+                "type": "text",
+                "required": false,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "anhsang": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 610,
+        "y": 1620,
+        "wires": [
+            [
+                "af94dca85051d1c0"
+            ]
+        ]
+    },
+    {
+        "id": "98b885ecb267ae91",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 24,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Chế độ:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 980,
+        "y": 2400,
+        "wires": []
+    },
+    {
+        "id": "0b6ffa33a2ba4ff0",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2400,
+        "wires": [
+            [
+                "2fe4e120a25a6839"
+            ]
+        ]
+    },
+    {
+        "id": "2fe4e120a25a6839",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nif(msg.payload.mode == 1)\n{\n    msg.payload = \"MODE AUTO\";\n    return msg\n}\nelse\n{\n    msg.payload = \"MODE MAN\";\n    return msg \n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2400,
+        "wires": [
+            [
+                "98b885ecb267ae91"
+            ]
+        ]
+    },
+    {
+        "id": "ce984dbb1ed69050",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 30,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Trạng thái quạt:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1000,
+        "y": 2480,
+        "wires": []
+    },
+    {
+        "id": "1c756fabbce12359",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2480,
+        "wires": [
+            [
+                "a5147ec724c5a337"
+            ]
+        ]
+    },
+    {
+        "id": "a5147ec724c5a337",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nif(msg.payload.quat == 1)\n{\n    msg.payload = \"Quạt Bật\";\n    return msg\n}\nelse\n{\n    msg.payload = \"Quạt tắt\";\n    return msg \n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2480,
+        "wires": [
+            [
+                "ce984dbb1ed69050"
+            ]
+        ]
+    },
+    {
+        "id": "648dfb05f24025b7",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 26,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Trạng thái đèn:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1000,
+        "y": 2560,
+        "wires": []
+    },
+    {
+        "id": "78790eb7774a9df2",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2560,
+        "wires": [
+            [
+                "8f18eae440110e8c"
+            ]
+        ]
+    },
+    {
+        "id": "8f18eae440110e8c",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "if(msg.payload.den == 1)\n{\n    msg.payload = \"Đèn Bật\";\n    return msg\n}\nelse\n{\n    msg.payload = \"Đèn tắt\";\n    return msg \n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2560,
+        "wires": [
+            [
+                "648dfb05f24025b7"
+            ]
+        ]
+    },
+    {
+        "id": "b91338d22ba5b838",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 28,
+        "width": 4,
+        "height": 1,
+        "name": "",
+        "label": "Trạng thái bơm:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1000,
+        "y": 2640,
+        "wires": []
+    },
+    {
+        "id": "d00837c6ec99ca06",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2640,
+        "wires": [
+            [
+                "24b09d91543cc1df"
+            ]
+        ]
+    },
+    {
+        "id": "24b09d91543cc1df",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "if(msg.payload.bom == 1)\n{\n    msg.payload = \"Bơm Bật\";\n    return msg\n}\nelse\n{\n    msg.payload = \"Bơm tắt\";\n    return msg \n}\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2640,
+        "wires": [
+            [
+                "b91338d22ba5b838"
+            ]
+        ]
+    },
+    {
+        "id": "52e06c14208b0a78",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 48,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Ngưỡng nhiệt độ:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 2720,
+        "wires": []
+    },
+    {
+        "id": "f622f5ab70b74641",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nif(msg.payload.mode == 1)\n{\n    msg.payload = \"MODE AUTO\";\n    return msg\n}\nelse\n{\n    msg.payload = \"MODE MAN\";\n    return msg \n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2720,
+        "wires": [
+            [
+                "52e06c14208b0a78"
+            ]
+        ]
+    },
+    {
+        "id": "93faddbdcf54c078",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 52,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Ngưỡng độ ẩm đất:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 2800,
+        "wires": []
+    },
+    {
+        "id": "f98bf4cef8ba8b98",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2800,
+        "wires": [
+            [
+                "e756c663323c2178"
+            ]
+        ]
+    },
+    {
+        "id": "e756c663323c2178",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nif(msg.payload.mode == 1)\n{\n    msg.payload = \"MODE AUTO\";\n    return msg\n}\nelse\n{\n    msg.payload = \"MODE MAN\";\n    return msg \n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2800,
+        "wires": [
+            [
+                "93faddbdcf54c078"
+            ]
+        ]
+    },
+    {
+        "id": "7b0f39b81a14acf1",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2720,
+        "wires": [
+            [
+                "f622f5ab70b74641"
+            ]
+        ]
+    },
+    {
+        "id": "f6d3c018d0945b05",
+        "type": "ui_text",
+        "z": "e7fcbac961d2a689",
+        "group": "b7bf5aeca9648f7b",
+        "order": 56,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "Ngưỡng ánh sáng:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1010,
+        "y": 2900,
+        "wires": []
+    },
+    {
+        "id": "401d41bc8a08c6cb",
+        "type": "mqtt in",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "topic": "ngochatphac/inforThietBi",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "02770b460b435349",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 430,
+        "y": 2900,
+        "wires": [
+            [
+                "fd07f3bbc3334429"
+            ]
+        ]
+    },
+    {
+        "id": "fd07f3bbc3334429",
+        "type": "function",
+        "z": "e7fcbac961d2a689",
+        "name": "",
+        "func": "\nif(msg.payload.mode == 1)\n{\n    msg.payload = \"MODE AUTO\";\n    return msg\n}\nelse\n{\n    msg.payload = \"MODE MAN\";\n    return msg \n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 2900,
+        "wires": [
+            [
+                "f6d3c018d0945b05"
+            ]
+        ]
+    },
+    {
+        "id": "e2d0f1a17825184b",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "467c38fe6b4037a8",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "2108d8d7369f4909",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "e79dc7bf599133da",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "bdcebd2331bf0273",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "e79dc7bf599133da",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "42619cfc6ec12d75",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "e79dc7bf599133da",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e07da558a2b034d3",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "c297b06b8f3a859b",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ea52b8ec3a6f840a",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 6,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3bf3496fc20efc0f",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 8,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f486031a9c75521f",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 9,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "702b0f2cb797bf14",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 10,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "ab09d01edde1cadd",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 11,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5e06b19c6e0b6c2b",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "377a1373a223b062",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 13,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "9ce125209c98dbcb",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 14,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "545541ef5e95cb4a",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 15,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "fc8298e99c9fdf4c",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 16,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "e7dca2768ca08f18",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 17,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3ffb9dbeb1c12f09",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 18,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "01e91b82cc66e1c6",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 19,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a04be7f7730e0115",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 20,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "6f25e9e7ae556fac",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 21,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "006d9e767896cf2e",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 22,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "70c6c6347455aa48",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 23,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "915946ab9572b172",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 25,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "ec6fd163510e9d41",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 27,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "4cb57f9b4bf743c1",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 29,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8bca3ce673bffa1c",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 31,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b1c167640def21ff",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 32,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "080823c9b04255ba",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 35,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "80bd91607ff3f6c6",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 38,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "c5e32b46ef80495b",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 41,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "ecbdb2b6298ef0bb",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 44,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "7c03315352d4c0a8",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 45,
+        "width": 27,
+        "height": 1
+    },
+    {
+        "id": "3ec427d74a27b079",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 47,
+        "width": "27",
+        "height": "1"
+    },
+    {
+        "id": "2947859cbf257f09",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 49,
+        "width": "27",
+        "height": "4"
+    },
+    {
+        "id": "fc36dae8d7aa9fe9",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 51,
+        "width": "5",
+        "height": "1"
+    },
+    {
+        "id": "a10a0c49c1ee6c7c",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 53,
+        "width": "24",
+        "height": "1"
+    },
+    {
+        "id": "f083d1ac64a1f36f",
+        "type": "ui_spacer",
+        "z": "e7fcbac961d2a689",
+        "name": "spacer",
+        "group": "b7bf5aeca9648f7b",
+        "order": 55,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "b7bf5aeca9648f7b",
+        "type": "ui_group",
+        "name": "Các thông số về môi trường",
+        "tab": "544ba19b4b9ccf65",
+        "order": 2,
+        "disp": true,
+        "width": 27,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "02770b460b435349",
+        "type": "mqtt-broker",
+        "name": "broker.hivemq.com",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "hello",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "e79dc7bf599133da",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "544ba19b4b9ccf65",
+        "type": "ui_tab",
+        "name": "THIẾT KẾ MÔ HÌNH ỨNG DỤNG IOT VÀO  TRỒNG RAU SẠCH SỬ DỤNG ESP32",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]

@@ -1,0 +1,40 @@
+Removed Pin From Net: NetName=+12 Pin=D1-2
+Removed Pin From Net: NetName=+12 Pin=D2-2
+Removed Pin From Net: NetName=NetHD3_1 Pin=RL2-2
+Removed Pin From Net: NetName=+12 Pin=RL2-5
+Removed Pin From Net: NetName=NetHD4_1 Pin=RL3-2
+Removed Pin From Net: NetName=+12 Pin=RL3-5
+Removed Pin From Net: NetName=+12 Pin=U3-4
+Removed Pin From Net: NetName=+12 Pin=U4-4
+Change Component Footprint: Designator=HD3 Old Footprint=HED3 New Footprint=HED2
+Change Component Footprint: Designator=HD4 Old Footprint=HED3 New Footprint=HED2
+Change Component Comment : Designator=HD3 Old Comment=Header 3 New Comment=Header 2
+Change Component Comment : Designator=HD4 Old Comment=Header 3 New Comment=Header 2
+Change component parameters: Designator = "HD3" ("HD3"); Footprint = "HED3"; UniqueID = "\UMODMPIS" ("\UMODMPIS")
+Change component parameters (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Change component parameters: Designator = "HD4" ("HD4"); Footprint = "HED3"; UniqueID = "\QMUXXHMH" ("\QMUXXHMH")
+Change component parameters (AddParameter): Name = "Value"; Value = "Header 2"; VariantName = "[No Variations]"
+Added Component: Designator=U1(HLK-5M12)
+Add component (AddParameter): Name = "Category"; Value = "MODULE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = "Hi-link"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = "HLK-5M12"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = "4"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = "WAVE"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "12V/5W"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+5 Pin=D1-2
+Added Pin To Net: NetName=+5 Pin=D2-2
+Added Pin To Net: NetName=GND Pin=HD3-2
+Added Pin To Net: NetName=GND Pin=HD4-2
+Added Pin To Net: NetName=NetHD3_1 Pin=RL2-1
+Added Pin To Net: NetName=+12 Pin=RL2-3
+Added Pin To Net: NetName=+5 Pin=RL2-5
+Added Pin To Net: NetName=NetHD4_1 Pin=RL3-1
+Added Pin To Net: NetName=+12 Pin=RL3-3
+Added Pin To Net: NetName=+5 Pin=RL3-5
+Added Pin To Net: NetName=+5 Pin=U3-4
+Added Pin To Net: NetName=+5 Pin=U4-4
+Added Member To Class: ClassName=MaiChe Member=Component Mua JP 1x4 2.54
+Added Member To Class: ClassName=MaiChe Member=Component U1 HLK-5M12
+Added Room: Name=MaiChe

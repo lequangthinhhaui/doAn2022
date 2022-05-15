@@ -2,6 +2,7 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 //#include <Button.h>
+#include <ArduinoJson.h>
 
 //define pin to use
 //input
@@ -43,6 +44,8 @@ int dataInt = 0;
 String Data = "";
 String ChuoiSendWebJson = "";
 float nhietdo = 0;
+
+char inforInverterBuff[256];
 
 unsigned long last = 0, bien = 0;
 
@@ -140,6 +143,11 @@ void buttonInit()
 void taskInit()
 {
   handleButton1Task();
+  handleButton2Task();
+  handleButton3Task();
+  handleButton4Task();
+  handleButton5Task();
+  handleButton6Task();
   handleMQTTTask();
 }
 void handleButton1Task()
@@ -178,7 +186,7 @@ void handleButton3Task()
     1);
 }
 
-void handleButto4Task()
+void handleButton4Task()
 {
   xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
     handleButton4,  // Function to be called
@@ -239,13 +247,13 @@ void handleButton1(void *parameter) {
     }
     if (button1PressCount == 0)
     {
-      digitalWrite(OUT_01, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "11");
+      digitalWrite(OUT_01, LOW);
+      client.publish(mqtt_topic_pub.c_str(), "10");
     }
     else if (button1PressCount == 1)
     {
-      digitalWrite(OUT_01, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "10");
+      digitalWrite(OUT_01, HIGH);
+      client.publish(mqtt_topic_pub.c_str(), "11");
     }
   }
 }
@@ -263,13 +271,13 @@ void handleButton2(void *parameter) {
     }
     if (button2PressCount == 0)
     {
-      digitalWrite(OUT_02, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "21");
+      digitalWrite(OUT_02, LOW);
+      client.publish(mqtt_topic_pub.c_str(), "20");
     }
     else if (button2PressCount == 1)
     {
-      digitalWrite(OUT_02, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "20");
+      digitalWrite(OUT_02, HIGH);
+      client.publish(mqtt_topic_pub.c_str(), "21");
     }
   }
 }
@@ -288,13 +296,13 @@ void handleButton3(void *parameter) {
     }
     if (button3PressCount == 0)
     {
-      digitalWrite(OUT_03, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "31");
+      digitalWrite(OUT_03, LOW);
+      client.publish(mqtt_topic_pub.c_str(), "30");
     }
     else if (button3PressCount == 1)
     {
-      digitalWrite(OUT_03, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "30");
+      digitalWrite(OUT_03, HIGH);
+      client.publish(mqtt_topic_pub.c_str(), "31");
     }
   }
 }
@@ -310,13 +318,13 @@ void handleButton4(void *parameter) {
     }
     if (button4PressCount == 0)
     {
-      digitalWrite(OUT_04, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "41");
+      digitalWrite(OUT_04, LOW);
+      client.publish(mqtt_topic_pub.c_str(), "40");
     }
     else if (button4PressCount == 1)
     {
-      digitalWrite(OUT_04, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "40");
+      digitalWrite(OUT_04, HIGH);
+      client.publish(mqtt_topic_pub.c_str(), "41");
     }
   }
 }
@@ -333,13 +341,13 @@ void handleButton5(void *parameter) {
     }
     if (button5PressCount == 0)
     {
-      digitalWrite(OUT_05, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "51");
+      digitalWrite(OUT_05, LOW);
+      client.publish(mqtt_topic_pub.c_str(), "50");
     }
     else if (button5PressCount == 1)
     {
-      digitalWrite(OUT_05, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "50");
+      digitalWrite(OUT_05, HIGH);
+      client.publish(mqtt_topic_pub.c_str(), "51");
     }
   }
 }
@@ -355,13 +363,13 @@ void handleButton6(void *parameter) {
     }
     if (button6PressCount == 0)
     {
-      digitalWrite(OUT_06, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "61");
+      digitalWrite(OUT_06, LOW);
+      client.publish(mqtt_topic_pub.c_str(), "60");
     }
     else if (button6PressCount == 1)
     {
-      digitalWrite(OUT_06, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "60");
+      digitalWrite(OUT_06, HIGH);
+      client.publish(mqtt_topic_pub.c_str(), "61");
     }
   }
 }
@@ -371,7 +379,16 @@ void handleButton6(void *parameter) {
 void handleMQTT(void *parameter) {
   while (1)
   {
-
+    DynamicJsonDocument doc(1024);
+    doc["den1"]   =  button1PressCount;
+    doc["den2"] =  button2PressCount;
+    doc["den3"]   = button3PressCount;
+    doc["den4"] = button4PressCount;
+    doc["den5"]   = button5PressCount;
+    doc["den6"] = button6PressCount;
+    serializeJson(doc, inforInverterBuff);
+    client.publish(mqtt_topic_pub.c_str(), inforInverterBuff);
+    vTaskDelay(3000/portTICK_PERIOD_MS);
   }
 
 }

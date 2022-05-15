@@ -1,0 +1,13 @@
+Removed Pin From Net: NetName=SET_CLOSE Pin=C6-q
+Added Member To Class: ClassName=Sheet1 Member=Component C3 Header2
+Added Member To Class: ClassName=Sheet1 Member=Component C6 104
+Added Member To Class: ClassName=Sheet1 Member=Component C8 LCD_I2C
+Added Member To Class: ClassName=Sheet1 Member=Component C10 Header3
+Added Member To Class: ClassName=Sheet1 Member=Component R1 47K
+Added Member To Class: ClassName=Sheet1 Member=Component R3 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R8 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R12 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R18 100R
+Added Member To Class: ClassName=Sheet1 Member=Component U3 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U4 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U5 DS1307_Module

@@ -1,0 +1,10 @@
+Added Component: Designator=BUCK LM2596(BUCK LM2596)
+Added Pin To Net: NetName=VCC12 Pin=BUCK LM2596-1
+Added Pin To Net: NetName=GND Pin=BUCK LM2596-3
+Added Pin To Net: NetName=VCC5 Pin=BUCK LM2596-4
+Added Pin To Net: NetName=NetBUCK LM2596_2 Pin=BUCK LM2596-2
+Added Pin To Net: NetName=NetBUCK LM2596_2 Pin=JACK DC1-2
+Added Net: Name=NetBUCK LM2596_2
+Added Member To Class: ClassName=Sheet1 Member=Component BUCK LM2596
+Added Member To Class: ClassName=Sheet1 Member=Component C8 SS_LIGHT
+Added Member To Class: ClassName=Sheet1 Member=Component C10 SS-RAIN

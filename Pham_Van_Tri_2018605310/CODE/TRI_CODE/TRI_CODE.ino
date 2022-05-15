@@ -15,9 +15,13 @@
 #include <LiquidCrystal_I2C.h>
 
 char auth[] = BLYNK_AUTH_TOKEN;
-
+//
 char ssid[] = "phamtri";
 char pass[] = "12345678";
+
+
+//char ssid[] = "Zoro";
+//char pass[] = "minhdien04";
 
 #define DHTPIN 15         
 #define DHTTYPE DHT22   
@@ -26,24 +30,12 @@ DHT dht(DHTPIN, DHTTYPE);
 BlynkTimer timer;
 
 
-//user variable
-
-LiquidCrystal_I2C lcd(0x27, 16, 2); //lcd i2c 16x2
-
+LiquidCrystal_I2C lcd(0x27, 16, 2);
 float temper = 0.0;
 float humi = 0.0;
-//humi = dht.readHumidity();
-//temper = dht.readTemperature(); // or dht.readTemperature(true) for Fahrenheit
+
 void sendSensor()
 {
-  humi = dht.readHumidity();
-  temper = dht.readTemperature();
-
-  if (isnan(humi) || isnan(temper)) {
-    Serial.println("Failed to read from DHT sensor!");
-    return;
-  }
-
   Blynk.virtualWrite(V5, humi);
   Blynk.virtualWrite(V6, temper);
 }
@@ -52,29 +44,56 @@ void setup()
 {
   // Debug console
   Serial.begin(115200);
-  Blynk.begin(auth, ssid, pass);
   dht.begin();
   sendSensor();
   // Setup a function to be called every second
   timer.setInterval(1000L, sendSensor);
-  
   lcd.init();
   // bat led nen                     
   lcd.backlight();
+  sendDataToLCDTask();
+  Blynk.begin(auth, ssid, pass);
+
 }
 
 void loop()
 {
+  timer.run(); 
   Blynk.run();
-  timer.run();
-  lcd.setCursor(0, 0);
-  //in ra man hinh
-  lcd.print("Temp: ");
-  lcd.setCursor(6, 0);
-  lcd.print(temper);
-  //set con tro hang thu hai, cot thu nhat
-  lcd.setCursor(0,1);
-  lcd.print("Humi: ");
-  lcd.setCursor(6, 1);
-  lcd.print(humi);
+}
+
+
+void sendDataToLCDTask()
+{
+  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
+    sendDataToLCD,  // Function to be called
+    "handleMQTT",   // Name of task
+    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
+    NULL,         // Parameter to pass to function
+    5,            // Task priority (0 to configMAX_PRIORITIES - 1)
+    NULL,         // Task handle
+    1);
+}
+
+void sendDataToLCD(void *parameter) {
+  while (1) {
+    humi = dht.readHumidity();
+    temper = dht.readTemperature();
+    lcd.setCursor(0, 0);
+    //in ra man hinh
+    lcd.print("Temp: ");
+    lcd.setCursor(6, 0);
+    lcd.print(temper);
+    lcd.setCursor(13, 0);
+    lcd.write(0xDF);
+    lcd.print("C");
+    //set con tro hang thu hai, cot thu nhat
+    lcd.setCursor(0,1);
+    lcd.print("Humi: ");
+    lcd.setCursor(6, 1);
+    lcd.print(humi);
+    lcd.setCursor(13, 1);
+    lcd.print("%");
+    vTaskDelay(2000/ portTICK_PERIOD_MS);
+  }
 }

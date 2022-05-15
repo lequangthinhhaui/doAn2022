@@ -97,17 +97,17 @@ const labels = [
         if (i<=30)
         {
             // dataset.data1.push(data);
-            if(index == 0)
-              dataset.data.push(data1);
-            else if(index == 1)
+            // if(index == 0)
+            //   dataset.data.push(data2);
+            // else if(index == 1)
               dataset.data.push(data2);
         }
         else
         {
           if(index == 0)
           {
-            dataset.data.shift();
-            dataset.data.push(data1);
+            // dataset.data.shift();
+            // dataset.data.push(data1);
           }
           else if(index == 1)
           {
@@ -126,6 +126,54 @@ const labels = [
     }
     chart.update();
 }
+
+
+var i = 0;
+function addData1(chart, label, data1) {
+  i++;
+  chart.data.datasets.forEach((dataset, index) => {
+    console.log(index);
+
+      if (i<=30)
+      {
+          // dataset.data1.push(data);
+          // if(index == 0)
+          //   dataset.data.push(data2);
+          // else if(index == 1)
+            dataset.data.push(data1);
+      }
+      else
+      {
+        if(index == 0)
+        {
+          // dataset.data.shift();
+          // dataset.data.push(data1);
+        }
+        else if(index == 1)
+        {
+          dataset.data.shift();
+          dataset.data.push(data1);
+        }
+      }
+  });
+
+  if (i<=30)
+      chart.data.labels.push(label);
+  else
+  {
+      chart.data.labels.shift();
+      chart.data.labels.push(label);
+  }
+  chart.update();
+}
+
+const myChart2 = new Chart(
+  document.getElementById('myChart2'),
+  config
+);
+
+
+
 
 var counterVol = 0;
 var counteTimes = 0;
@@ -162,6 +210,7 @@ function onMessageArrived(message)
     console.log("counter time is", counteTimes);
 
     addData(myChart, time, rdnumber, rdnumber2);
+    addData1(myChart2, time, rdnumber, rdnumber2);
 
 }
 

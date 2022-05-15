@@ -1,0 +1,257 @@
+Removed Pin From Net: NetName=GND_ISO Pin=C9-2
+Removed Pin From Net: NetName=VCC33_ISO Pin=C9-3
+Removed Pin From Net: NetName=GND_ISO Pin=C10-1
+Removed Pin From Net: NetName=VCC33_ISO Pin=C10-3
+Removed Pin From Net: NetName=GND_ISO Pin=C11-1
+Removed Pin From Net: NetName=VCC33_ISO Pin=C11-3
+Removed Pin From Net: NetName=GND_ISO Pin=C13-2
+Removed Pin From Net: NetName=GND_ISO Pin=C14-1
+Removed Pin From Net: NetName=GND_ISO Pin=C15-1
+Removed Pin From Net: NetName=VCC5_ISO Pin=C15-3
+Removed Pin From Net: NetName=COM_O_1 Pin=C17-1
+Removed Pin From Net: NetName=OUT_RL1 Pin=C17-2
+Removed Pin From Net: NetName=OUT_RL2 Pin=C17-3
+Removed Pin From Net: NetName=OUT_RL3 Pin=C17-4
+Removed Pin From Net: NetName=GND_ISO Pin=JP1-1
+Removed Pin From Net: NetName=OUT_BTN_1 Pin=JP1-2
+Removed Pin From Net: NetName=OUT_BTN_2 Pin=JP1-3
+Removed Pin From Net: NetName=OUT_BTN_3 Pin=JP1-4
+Removed Pin From Net: NetName=OUT_BTN_4 Pin=JP1-5
+Removed Pin From Net: NetName=OUT_BTN_5 Pin=JP1-6
+Removed Pin From Net: NetName=VCC5_ISO Pin=LED8-1
+Removed Pin From Net: NetName=VCC5_ISO Pin=R20-2
+Removed Member From Class: ClassName=Sheet1 Member=C14
+Removed Member From Class: ClassName=Sheet1 Member=C15
+Removed Member From Class: ClassName=Sheet1 Member=C16
+Removed Member From Class: ClassName=Sheet1 Member=C17
+Removed Member From Class: ClassName=Sheet1 Member=C18
+Removed Member From Class: ClassName=Sheet1 Member=JP1
+Change Component Comment : Designator=R8 Old Comment=100R New Comment=220R
+Change Component Comment : Designator=R5 Old Comment=510R New Comment=390R
+Change Component Comment : Designator=R9 Old Comment=510R New Comment=560R
+Change Component Designator: OldDesignator=C1 NewDesignator=C2
+Change Component Designator: OldDesignator=C2 NewDesignator=C3
+Change Component Designator: OldDesignator=C3 NewDesignator=C5
+Change Component Designator: OldDesignator=C4 NewDesignator=C7
+Change Component Designator: OldDesignator=C5 NewDesignator=C9
+Change Component Designator: OldDesignator=C6 NewDesignator=C4
+Change Component Designator: OldDesignator=C7 NewDesignator=C6
+Change Component Designator: OldDesignator=C12 NewDesignator=C10
+Change Component Designator: OldDesignator=C16 NewDesignator=C12
+Change Component Designator: OldDesignator=C18 NewDesignator=C13
+Change Component Designator: OldDesignator=D1 NewDesignator=D2
+Change Component Designator: OldDesignator=D2 NewDesignator=D1
+Change Component Designator: OldDesignator=D3 NewDesignator=D4
+Change Component Designator: OldDesignator=LED2 NewDesignator=LED4
+Change Component Designator: OldDesignator=LED4 NewDesignator=LED6
+Change Component Designator: OldDesignator=LED5 NewDesignator=LED8
+Change Component Designator: OldDesignator=LED6 NewDesignator=LED2
+Change Component Designator: OldDesignator=LED7 NewDesignator=LED9
+Change Component Designator: OldDesignator=LED9 NewDesignator=LED7
+Change Component Designator: OldDesignator=Q1 NewDesignator=Q2
+Change Component Designator: OldDesignator=Q2 NewDesignator=Q1
+Change Component Designator: OldDesignator=Q3 NewDesignator=Q4
+Change Component Designator: OldDesignator=R2 NewDesignator=R9
+Change Component Designator: OldDesignator=R3 NewDesignator=R2
+Change Component Designator: OldDesignator=R4 NewDesignator=R11
+Change Component Designator: OldDesignator=R5 NewDesignator=R4
+Change Component Designator: OldDesignator=R6 NewDesignator=R5
+Change Component Designator: OldDesignator=R7 NewDesignator=R12
+Change Component Designator: OldDesignator=R8 NewDesignator=R7
+Change Component Designator: OldDesignator=R9 NewDesignator=R10
+Change Component Designator: OldDesignator=R10 NewDesignator=R13
+Change Component Designator: OldDesignator=R11 NewDesignator=R22
+Change Component Designator: OldDesignator=R12 NewDesignator=R15
+Change Component Designator: OldDesignator=R13 NewDesignator=R23
+Change Component Designator: OldDesignator=R14 NewDesignator=R3
+Change Component Designator: OldDesignator=R15 NewDesignator=R18
+Change Component Designator: OldDesignator=R16 NewDesignator=R24
+Change Component Designator: OldDesignator=R17 NewDesignator=R6
+Change Component Designator: OldDesignator=R18 NewDesignator=R8
+Change Component Designator: OldDesignator=R19 NewDesignator=R25
+Change Component Designator: OldDesignator=R21 NewDesignator=R26
+Change Component Designator: OldDesignator=R23 NewDesignator=R16
+Change Component Designator: OldDesignator=R24 NewDesignator=R28
+Change Component Designator: OldDesignator=R26 NewDesignator=R20
+Change Component Designator: OldDesignator=R27 NewDesignator=R21
+Change Component Designator: OldDesignator=RL1 NewDesignator=RL2
+Change Component Designator: OldDesignator=RL2 NewDesignator=RL1
+Change Component Designator: OldDesignator=RL3 NewDesignator=RL4
+Change Component Designator: OldDesignator=U1 NewDesignator=U2
+Change Component Designator: OldDesignator=U2 NewDesignator=U1
+Change Component Designator: OldDesignator=U3 NewDesignator=U4
+Change Component Designator: OldDesignator=U4 NewDesignator=U7
+Added Component: Designator=C1(Header5)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/6130xx143121.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Karrer Zheng"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "29 March 2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "W¨¹rth Elektronik eiSos GmbH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NoPins"; Value = "02"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "partNo"; Value = "613002143121"; VariantName = "[No Variations]"
+Added Component: Designator=C11(HDR6)
+Add component (AddParameter): Name = "ComponentLink1 Description"; Value = "Manufacturer"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.we-online.com"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2 Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink2URL"; Value = "http://katalog.we-online.de/em/datasheet/6130xx143121.pdf"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created by"; Value = "Karrer Zheng"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Created Date"; Value = "29 March 2013"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "W¨¹rth Elektronik eiSos GmbH"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "NoPins"; Value = "02"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "partNo"; Value = "613002143121"; VariantName = "[No Variations]"
+Added Component: Designator=D3(DIODE 0.5A)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH001065"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "Diode 1N4148 DO35 450mA 100V ( 1N4148 DIP)"; VariantName = "[No Variations]"
+Added Component: Designator=LED5(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=LED10(LED-3MM-BLUE)
+Add component (AddParameter): Name = "Chung_Loai"; Value = "C?m"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Don_Vi"; Value = "Con"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ghi_Chu"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Kieu_Chan"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009003"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten_Linh_Kien"; Value = "LED 3MM Xanh Duong SS (1000c)"; VariantName = "[No Variations]"
+Added Component: Designator=Q3(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=Q5(C1815_cam)
+Add component (AddParameter): Name = "Value"; Value = "C1815"; VariantName = "[No Variations]"
+Added Component: Designator=R14(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R17(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R19(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R27(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R29(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R30(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=R31(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Component: Designator=RL3(RELAY_SRA_05VDC_SL_C)
+Add component (AddParameter): Name = "Ma_Hang"; Value = "MH009374"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Ten"; Value = "Relay 5V10A SRD-05VDC-SL-C Chính Hãng"; VariantName = "[No Variations]"
+Added Component: Designator=U3(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Component: Designator=U5(BUZZER_D9_TH)
+Add component (AddParameter): Name = "Category"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CompanyID"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MFR_URL"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "MPN"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PinCount"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Solder"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = ""; VariantName = "[No Variations]"
+Added Component: Designator=U6(DIP4/W0.3)
+Add component (AddParameter): Name = "Value"; Value = "PC817"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=COM_O_1 Pin=C1-1
+Added Pin To Net: NetName=OUT_RL1 Pin=C1-2
+Added Pin To Net: NetName=OUT_RL2 Pin=C1-3
+Added Pin To Net: NetName=OUT_RL3 Pin=C1-4
+Added Pin To Net: NetName=GND_ISO Pin=C11-1
+Added Pin To Net: NetName=OUT_BTN_1 Pin=C11-2
+Added Pin To Net: NetName=OUT_BTN_2 Pin=C11-3
+Added Pin To Net: NetName=OUT_BTN_3 Pin=C11-4
+Added Pin To Net: NetName=OUT_BTN_4 Pin=C11-5
+Added Pin To Net: NetName=OUT_BTN_5 Pin=C11-6
+Added Pin To Net: NetName=VCC5 Pin=D3-2
+Added Pin To Net: NetName=VCC5 Pin=LED5-1
+Added Pin To Net: NetName=VCC5 Pin=LED10-1
+Added Pin To Net: NetName=GND Pin=Q3-1
+Added Pin To Net: NetName=GND Pin=Q5-1
+Added Pin To Net: NetName=VCC5 Pin=R27-1
+Added Pin To Net: NetName=VCC5 Pin=RL3-3
+Added Pin To Net: NetName=COM_O_1 Pin=RL3-4
+Added Pin To Net: NetName=GND_ISO Pin=U3-2
+Added Pin To Net: NetName=VCC5 Pin=U3-4
+Added Pin To Net: NetName=GND_ISO Pin=U6-2
+Added Pin To Net: NetName=VCC5 Pin=U6-4
+Change Net Name : Old Net Name=NetD1_1 New Net Name=NetD2_1
+Change Net Name : Old Net Name=NetD2_1 New Net Name=NetD1_1
+Change Net Name : Old Net Name=NetD3_1 New Net Name=NetD4_1
+Change Net Name : Old Net Name=NetLED2_2 New Net Name=NetLED4_2
+Change Net Name : Old Net Name=NetLED4_2 New Net Name=NetLED6_2
+Change Net Name : Old Net Name=NetLED5_2 New Net Name=NetLED8_2
+Change Net Name : Old Net Name=NetLED6_2 New Net Name=NetLED2_2
+Change Net Name : Old Net Name=NetLED7_2 New Net Name=NetLED9_2
+Change Net Name : Old Net Name=NetLED9_2 New Net Name=NetLED7_2
+Change Net Name : Old Net Name=NetQ1_3 New Net Name=NetQ2_3
+Change Net Name : Old Net Name=NetQ2_3 New Net Name=NetQ1_3
+Change Net Name : Old Net Name=NetQ3_3 New Net Name=NetQ4_3
+Change Net Name : Old Net Name=NetR8_2 New Net Name=NetR7_2
+Change Net Name : Old Net Name=NetR9_1 New Net Name=NetR10_1
+Change Net Name : Old Net Name=NetR17_2 New Net Name=NetR6_2
+Change Net Name : Old Net Name=NetR18_1 New Net Name=NetR8_1
+Change Net Name : Old Net Name=NetR26_2 New Net Name=NetR20_2
+Change Net Name : Old Net Name=NetR27_1 New Net Name=NetR21_1
+Change Net Name : Old Net Name=SS_HUMI New Net Name=SS_FLAME
+Added Pin To Net: NetName=NetD3_1 Pin=D3-1
+Added Pin To Net: NetName=NetD3_1 Pin=Q3-2
+Added Pin To Net: NetName=NetD3_1 Pin=R14-2
+Added Pin To Net: NetName=NetD3_1 Pin=RL3-5
+Added Net: Name=NetD3_1
+Added Pin To Net: NetName=NetLED5_2 Pin=LED5-2
+Added Pin To Net: NetName=NetLED5_2 Pin=R14-1
+Added Net: Name=NetLED5_2
+Added Pin To Net: NetName=NetLED10_2 Pin=LED10-2
+Added Pin To Net: NetName=NetLED10_2 Pin=R29-1
+Added Net: Name=NetLED10_2
+Added Pin To Net: NetName=NetQ3_3 Pin=Q3-3
+Added Pin To Net: NetName=NetQ3_3 Pin=R19-2
+Added Net: Name=NetQ3_3
+Added Pin To Net: NetName=NetQ5_2 Pin=Q5-2
+Added Pin To Net: NetName=NetQ5_2 Pin=R29-2
+Added Pin To Net: NetName=NetQ5_2 Pin=U5-2
+Added Net: Name=NetQ5_2
+Added Pin To Net: NetName=NetQ5_3 Pin=Q5-3
+Added Pin To Net: NetName=NetQ5_3 Pin=R31-2
+Added Net: Name=NetQ5_3
+Added Pin To Net: NetName=NetR17_2 Pin=R17-2
+Added Pin To Net: NetName=NetR17_2 Pin=U3-1
+Added Net: Name=NetR17_2
+Added Pin To Net: NetName=NetR19_1 Pin=R19-1
+Added Pin To Net: NetName=NetR19_1 Pin=U3-3
+Added Net: Name=NetR19_1
+Added Pin To Net: NetName=NetR27_2 Pin=R27-2
+Added Pin To Net: NetName=NetR27_2 Pin=U5-1
+Added Net: Name=NetR27_2
+Added Pin To Net: NetName=NetR30_2 Pin=R30-2
+Added Pin To Net: NetName=NetR30_2 Pin=U6-1
+Added Net: Name=NetR30_2
+Added Pin To Net: NetName=NetR31_1 Pin=R31-1
+Added Pin To Net: NetName=NetR31_1 Pin=U6-3
+Added Net: Name=NetR31_1
+Added Pin To Net: NetName=OUT_4 Pin=R17-1
+Added Pin To Net: NetName=OUT_4 Pin=U7-8
+Added Net: Name=OUT_4
+Added Pin To Net: NetName=OUT_BUZ Pin=R30-1
+Added Pin To Net: NetName=OUT_BUZ Pin=U7-7
+Added Net: Name=OUT_BUZ
+Added Pin To Net: NetName=OUT_RL4 Pin=C1-5
+Added Pin To Net: NetName=OUT_RL4 Pin=RL3-1
+Added Net: Name=OUT_RL4
+Added Member To Class: ClassName=Sheet1 Member=Component D4 100v
+Added Member To Class: ClassName=Sheet1 Member=Component LED10 LED 3mm
+Added Member To Class: ClassName=Sheet1 Member=Component Q4 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component Q5 C1815
+Added Member To Class: ClassName=Sheet1 Member=Component R28 1K
+Added Member To Class: ClassName=Sheet1 Member=Component R29 510R
+Added Member To Class: ClassName=Sheet1 Member=Component R30 100R
+Added Member To Class: ClassName=Sheet1 Member=Component R31 510R
+Added Member To Class: ClassName=Sheet1 Member=Component RL4 Relay
+Added Member To Class: ClassName=Sheet1 Member=Component U5 BUZZ
+Added Member To Class: ClassName=Sheet1 Member=Component U6 PC817
+Added Member To Class: ClassName=Sheet1 Member=Component U7 ESP32_MODULE copy
+Added Room: Name=Sheet1

@@ -1,0 +1,104 @@
+Removed Pin From Net: NetName=GND Pin=C2-1
+Removed Pin From Net: NetName=+5 Pin=D1-2
+Removed Pin From Net: NetName=GND Pin=HD2-1
+Removed Pin From Net: NetName=+5 Pin=HD2-2
+Removed Pin From Net: NetName=GND Pin=HD4-2
+Removed Pin From Net: NetName=GND Pin=LED3-2
+Removed Pin From Net: NetName=GND Pin=LED5-2
+Removed Pin From Net: NetName=GND Pin=Q3-1
+Removed Pin From Net: NetName=MODE Pin=R7-2
+Removed Pin From Net: NetName=+12 Pin=RL3-3
+Removed Pin From Net: NetName=+5 Pin=RL3-5
+Removed Pin From Net: NetName=+5 Pin=U4-4
+Removed Member From Class: ClassName=MaiChe Member=D1
+Removed Member From Class: ClassName=MaiChe Member=HD2
+Removed Member From Class: ClassName=MaiChe Member=HD4
+Removed Member From Class: ClassName=MaiChe Member=LED3
+Removed Member From Class: ClassName=MaiChe Member=LED5
+Removed Member From Class: ClassName=MaiChe Member=Q3
+Removed Member From Class: ClassName=MaiChe Member=R5
+Removed Member From Class: ClassName=MaiChe Member=R6
+Removed Member From Class: ClassName=MaiChe Member=RL3
+Removed Member From Class: ClassName=MaiChe Member=U1
+Removed Member From Class: ClassName=MaiChe Member=U4
+Change Component Footprint: Designator=C2 Old Footprint=CN1 New Footprint=CP1.5/3.4
+Change Component Footprint: Designator=SW1 Old Footprint=SW3x1 New Footprint=SW_TOGGLE_7103P3YZQE
+Change Component Comment : Designator=R1 Old Comment=10K New Comment=330
+Change Component Comment : Designator=R7 Old Comment=10K New Comment=330
+Change Component Comment : Designator=C2 Old Comment=100pF New Comment=1000uF/16V
+Change Component Comment : Designator=SW1 Old Comment=Switch 3x1 New Comment=7103P3YZQE
+Change component parameters: Designator = "C2" ("C2"); Footprint = "CN1"; UniqueID = "\SECAOIGD" ("\SECAOIGD")
+Change component parameters (AddParameter): Name = "Description 1"; Value = "2200uF-3300uF/6,3V - 1000uF-2200uF/10V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Description 2"; Value = "1000uF/16V - 470uF => 1000uF/25V - 100uF/100V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Description 3"; Value = "330uF>470uF/35V_220uF>470uF/50V_10uF>22uF/250V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Description 4"; Value = "220uF => 330uF/63V - 10uF =>33uF/160 - 200V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Description 5"; Value = "4,7uF>10uF/250V_3,3uF>10uF/400V - 2,2uF>4,7uF/450V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1000uF/16V"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SW1" ("SW1"); Footprint = "SW3x1"; UniqueID = "\THHSENHU" ("\THHSENHU")
+Change component parameters (AddParameter): Name = "Actuator Length"; Value = "11.43mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Actuator Material"; Value = "Brass, Chrome Plated"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Actuator Type"; Value = "Flat Anti-Rotation"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Bushing Thread"; Value = "1/4-40"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Category"; Value = "Switches"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Circuit"; Value = "SPDT"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1Description"; Value = "http://www.ckswitches.com/media/1394/7000toggle.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://www.ckswitches.com/media/1394/7000toggle.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Current Rating"; Value = "5A (AC/DC)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Electrical Life"; Value = "40,000 Cycles"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Features"; Value = "Epoxy Sealed Terminals"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Illumination"; Value = "Non-Illuminated"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Illumination Type, Color"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Illumination Voltage (Nominal)"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ingress Protection"; Value = "-"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "C&K"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "7103P3YZQE"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounting Type"; Value = "Panel Mount"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Operating Temperature"; Value = "-30°C ~ 85°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Packaging"; Value = "Bulk"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Panel Cutout Dimensions"; Value = "Circular - 6.35mm Dia"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Status"; Value = "Active"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pricing 1"; Value = "1=7.89, 10=7.496, 25=7.2984, 50=7.101, 100=6.9038, 250=6.50924, 500=5.523, 1000=5.22713 (USD)"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "RoHS"; Value = "RoHS Compliant"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Stock 1"; Value = "335"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier 1"; Value = "Digi-Key"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Supplier Part Number 1"; Value = "CKN1024-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Switch Function"; Value = "On-Off-On"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Termination Style"; Value = "Solder Lug"; VariantName = "[No Variations]"
+Added Component: Designator=C3(CP1.5/3.4)
+Add component (AddParameter): Name = "Description 1"; Value = "2200uF-3300uF/6,3V - 1000uF-2200uF/10V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 2"; Value = "1000uF/16V - 470uF => 1000uF/25V - 100uF/100V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 3"; Value = "330uF>470uF/35V_220uF>470uF/50V_10uF>22uF/250V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 4"; Value = "220uF => 330uF/63V - 10uF =>33uF/160 - 200V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Description 5"; Value = "4,7uF>10uF/250V_3,3uF>10uF/400V - 2,2uF>4,7uF/450V"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "1000uF/16V"; VariantName = "[No Variations]"
+Added Component: Designator=C4(CN2)
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=C5(CN2)
+Add component (AddParameter): Name = "Value"; Value = "0.1uF"; VariantName = "[No Variations]"
+Added Component: Designator=IC1(QTO-220)
+Add component (AddParameter): Name = "Value"; Value = "LM7805"; VariantName = "[No Variations]"
+Added Component: Designator=LED4(LED-3MM-YELLOW)
+Add component (AddParameter): Name = "Value"; Value = "LED 3 ly Single Colour"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+12 Pin=C2-1
+Added Pin To Net: NetName=GND Pin=C2-2
+Added Pin To Net: NetName=+5 Pin=C3-1
+Added Pin To Net: NetName=GND Pin=C3-2
+Added Pin To Net: NetName=GND Pin=C4-1
+Added Pin To Net: NetName=+12 Pin=C4-2
+Added Pin To Net: NetName=GND Pin=C5-1
+Added Pin To Net: NetName=+5 Pin=C5-2
+Added Pin To Net: NetName=+12 Pin=IC1-1
+Added Pin To Net: NetName=GND Pin=IC1-2
+Added Pin To Net: NetName=+5 Pin=IC1-3
+Added Pin To Net: NetName=MODE Pin=LED4-2
+Added Pin To Net: NetName=GND Pin=SW1-1
+Added Pin To Net: NetName=+5 Pin=U2-30
+Added Pin To Net: NetName=NetLED4_1 Pin=LED4-1
+Added Pin To Net: NetName=NetLED4_1 Pin=R7-2
+Added Net: Name=NetLED4_1
+Added Member To Class: ClassName=MaiChe Member=Component C3 1000uF/16V
+Added Member To Class: ClassName=MaiChe Member=Component C4 104
+Added Member To Class: ClassName=MaiChe Member=Component C5 104
+Added Member To Class: ClassName=MaiChe Member=Component IC1 LM7805
+Added Member To Class: ClassName=MaiChe Member=Component LED4 LED
+Added Room: Name=MaiChe

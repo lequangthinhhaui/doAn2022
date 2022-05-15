@@ -1,0 +1,26 @@
+Removed Pin From Net: NetName=MODE Pin=LED4-2
+Removed Pin From Net: NetName=Reset Pin=LED?-2
+Removed Member From Class: ClassName=MaiChe Member=LED4
+Removed Member From Class: ClassName=MaiChe Member=LED?
+Added Component: Designator=LED1(LED-3MM-YELLOW)
+Add component (AddParameter): Name = "Value"; Value = "LED 3 ly Single Colour"; VariantName = "[No Variations]"
+Added Component: Designator=LED3(LED-3MM-YELLOW)
+Add component (AddParameter): Name = "Value"; Value = "LED 3 ly Single Colour"; VariantName = "[No Variations]"
+Added Component: Designator=R2(R1/4W)
+Add component (AddParameter): Name = "Value"; Value = "R1/4W - 1K"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Reset Pin=LED1-2
+Added Pin To Net: NetName=MODE Pin=LED3-2
+Added Pin To Net: NetName=+5 Pin=R2-1
+Added Pin To Net: NetName=MODE Pin=R2-2
+Added Pin To Net: NetName=+5 Pin=SW1-3
+Added Pin To Net: NetName=NetLED1_1 Pin=LED1-1
+Added Pin To Net: NetName=NetLED1_1 Pin=R1-2
+Added Net: Name=NetLED1_1
+Added Pin To Net: NetName=NetLED3_1 Pin=LED3-1
+Added Pin To Net: NetName=NetLED3_1 Pin=R7-2
+Added Net: Name=NetLED3_1
+Added Member To Class: ClassName=MaiChe Member=Component LED1 LED
+Added Member To Class: ClassName=MaiChe Member=Component LED3 LED
+Added Member To Class: ClassName=MaiChe Member=Component R1 330
+Added Member To Class: ClassName=MaiChe Member=Component R2 1k
+Added Room: Name=MaiChe

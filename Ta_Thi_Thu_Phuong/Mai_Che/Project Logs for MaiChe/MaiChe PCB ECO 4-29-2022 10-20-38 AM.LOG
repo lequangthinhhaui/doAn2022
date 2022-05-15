@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=+5 Pin=D2-2
+Removed Pin From Net: NetName=+5 Pin=RL2-5
+Removed Pin From Net: NetName=+5 Pin=U3-4
+Added Pin To Net: NetName=+12 Pin=D2-2
+Added Pin To Net: NetName=+12 Pin=RL2-5
+Added Pin To Net: NetName=+12 Pin=U3-4
+Added Room: Name=MaiChe

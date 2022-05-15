@@ -1,0 +1,29 @@
+Change Component Designator: OldDesignator=JP? NewDesignator=JP1
+Added Component: Designator=T1(Touch)
+Add component (AddParameter): Name = "Designed by"; Value = "VanDungEvn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Fuse"; VariantName = "[No Variations]"
+Added Component: Designator=T2(Touch)
+Add component (AddParameter): Name = "Designed by"; Value = "VanDungEvn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Fuse"; VariantName = "[No Variations]"
+Added Component: Designator=T3(Touch)
+Add component (AddParameter): Name = "Designed by"; Value = "VanDungEvn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Fuse"; VariantName = "[No Variations]"
+Added Component: Designator=T4(Touch)
+Add component (AddParameter): Name = "Designed by"; Value = "VanDungEvn"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "Fuse"; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=NetJP?_5 New Net Name=NetJP1_5
+Change Net Name : Old Net Name=NetJP?_6 New Net Name=NetJP1_6
+Change Net Name : Old Net Name=NetJP?_7 New Net Name=NetJP1_7
+Change Net Name : Old Net Name=NetJP?_8 New Net Name=NetJP1_8
+Added Pin To Net: NetName=NetJP1_1 Pin=JP1-1
+Added Pin To Net: NetName=NetJP1_1 Pin=T4-1
+Added Net: Name=NetJP1_1
+Added Pin To Net: NetName=NetJP1_2 Pin=JP1-2
+Added Pin To Net: NetName=NetJP1_2 Pin=T3-1
+Added Net: Name=NetJP1_2
+Added Pin To Net: NetName=NetJP1_3 Pin=JP1-3
+Added Pin To Net: NetName=NetJP1_3 Pin=T2-1
+Added Net: Name=NetJP1_3
+Added Pin To Net: NetName=NetJP1_4 Pin=JP1-4
+Added Pin To Net: NetName=NetJP1_4 Pin=T1-1
+Added Net: Name=NetJP1_4

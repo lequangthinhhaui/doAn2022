@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=OUT_TTL_1 Pin=Arduino1-A0
+Removed Pin From Net: NetName=OUT_TTL_2 Pin=Arduino1-A1
+Added Pin To Net: NetName=OUT_TTL_2 Pin=Arduino1-A0
+Added Pin To Net: NetName=OUT_TTL_1 Pin=Arduino1-A1

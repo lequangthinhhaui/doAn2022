@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=LEFT Pin=Arduino1-D4
+Removed Pin From Net: NetName=DOWN Pin=Arduino1-D5
+Added Pin To Net: NetName=DOWN Pin=Arduino1-D4
+Added Pin To Net: NetName=LEFT Pin=Arduino1-D5
+Added Member To Class: ClassName=Sheet1 Member=Component Arduino1 Arduino Nano

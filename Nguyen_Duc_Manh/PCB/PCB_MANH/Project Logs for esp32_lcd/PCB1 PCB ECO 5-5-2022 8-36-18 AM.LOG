@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=TOUCH2 Pin=JP1-8
+Removed Pin From Net: NetName=LED_2 Pin=JP1-9
+Added Pin To Net: NetName=LED_2 Pin=JP1-8
+Added Pin To Net: NetName=TOUCH2 Pin=JP1-9
