@@ -1,0 +1,26 @@
+Require: Yêu cầu: 2 chế độ: 
+- Chế độ tự động: Nhiệt độ MT, độ ẩm đất, ánh sáng MT, độ ẩm MT 
+- Chế độ bằng tay: Điều khiển Bật tắt quạt, máy bơm, đèn qua Webserver và hiển thị.
+
+========================================
+Sơ đồ chân:
+
+/*
+ * Sensor Temperature: DHT22
+ *          VCC  ---- 5V 
+ *          GND  ---- GND 
+ *          DATA ----  25
+ * Sensor Do am dat:
+ *          DATA ---- 32 
+ * Sensor Anh Sang:
+ *          DATA ---- 33
+ * Output       
+ *          Den   ---- 13
+ *          Quat  ---- 12
+ *          Bom   ---- 14
+ * Button Mode: 26
+ */
+
+Include Library:
+	#include <DHT.h>
+	#include <Adafruit_Sensor.h>
