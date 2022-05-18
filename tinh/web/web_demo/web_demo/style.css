@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.yellow {
+    color: yellow;
+}
+.blue {
+    color: #214288;
+}
+#main {
+    /* margin: 0 30px; */
+}
+#header {
+    width: 100%;
+    height: 160px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #ccc;
+}
+#header p {
+    font-size: 40px;
+    margin-top: 10px;
+}
+#content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#content .content-box {
+    width: 200px;
+    border: 4px solid black;
+    border-radius: 30px;
+    margin: 10px;
+}
+.content-box p {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
+}
+.content-box .content-active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border: 4px solid red; */
+    margin: 0 12px;
+}
+.box-btn .lamp {
+    width: 90px;
+    height: 50px;
+    appearance: none;
+    border-radius: 26px ;
+    background-color: #ccc;
+    position: relative;
+    
+}
+.box-btn .lamp::before {
+    content: '';
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background-color: #efe2ef;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+    transition: 0.4s ease;
+}
+.box-btn .lamp:checked {
+    background-color: #00FA9A;
+}
+.box-btn .lamp:checked::before {
+    left: 43px;
+    transition: 0.4s ease;
+}
+
+.box-btn button {
+    width: 100px;
+    padding: 12px;
+    margin: 8px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box-btn button:nth-child(1) {
+    background-color: #00FA9A;
+}
+.box-btn button:nth-child(1):hover {
+    background-color: #8A2BE2;
+}
+.box-btn button:nth-child(2) {
+    background-color: #FF4500;
+}
+.box-btn button:nth-child(2):hover {
+    background-color: #8A2BE2;
+}
+.box-btn button:hover {
+    color: #fff;
+}
+.content-box h4 {
+    margin: 8px 0;
+}
+.content-box i {
+    font-size: 86px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width:739px) {
+    #header {
+        height: 200px;
+    }
+    .content-box {
+        flex: 1;
+    }
+}

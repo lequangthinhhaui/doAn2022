@@ -34,8 +34,8 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define MBUS_TXD_PIN   17         
 #define MBUS_RXD_PIN   16
 
-#define ssid "Zoro"//"WIFi bỊ nhiễm virut"
-#define password "minhdien04"//"minhdien04"
+#define ssid "NGUYEN HUY NGHIA"
+#define password "1234567890"
 
 
 #define mqtt_server "broker.hivemq.com" 
