@@ -1,14 +1,3 @@
-/*
-  ModbusRTU ESP32
-  Concurent thread example
-  
-  (c)2020 Alexander Emelianov (a.m.emelianov@gmail.com)
-  https://github.com/emelianov/modbus-esp8266
-
-  Tool Modbus Slave on PC for test
-  https://www.modbustools.com/download.html
-*/
-
 
 #include <PubSubClient.h>
 
@@ -153,7 +142,7 @@ void setup() {
    client.setServer(mqtt_server, mqtt_port); 
    client.setCallback(callback);
    taskInit();
-    otaUpdate();
+   otaUpdate();
 }
 
 void loop()
