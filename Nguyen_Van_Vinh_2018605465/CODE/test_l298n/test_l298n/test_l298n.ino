@@ -10,39 +10,21 @@ const int resolution = 8;
  
 void setup(){
   // configure LED PWM functionalitites
-  ledcSetup(ledChannel, freq, resolution);
-  
-  // attach the channel to the GPIO to be controlled
-  ledcAttachPin(ledPin, ledChannel);
-  ledcAttachPin(ledPin2, ledChannel1);
+pinMode(14, OUTPUT);
+pinMode(27, OUTPUT);
+ 
 
-  pinMode(26, OUTPUT);
-  pinMode(25, OUTPUT);
-  pinMode(33, OUTPUT);
-  pinMode(32, OUTPUT);
-  pinMode(23, OUTPUT);
-
-  digitalWrite(26, LOW);
-  digitalWrite(25, LOW);
-  digitalWrite(33, LOW);
-  digitalWrite(32, LOW);
-  digitalWrite(23, LOW);
 }
  
 void loop(){
-  for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
-    ledcWrite(ledChannel, dutyCycle);
-    ledcWrite(ledChannel1, 0);
-    delay(100);
-  }
+ digitalWrite(14, HIGH);
+  digitalWrite(27, LOW);
 
-    delay(1000);
-    for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
-    // changing the LED brightness with PWM
-    ledcWrite(ledChannel, 0);
-    ledcWrite(ledChannel1, dutyCycle);
-    delay(100);
-  }
-  delay(1000);
+  delay(2000);
+
+   digitalWrite(14, LOW);
+  digitalWrite(27, HIGH);
+
+  delay(2000);
 
 }

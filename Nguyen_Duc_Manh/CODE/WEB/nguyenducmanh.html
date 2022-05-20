@@ -224,6 +224,12 @@
 
 <script>
 
+var mqttTopicControlTB = "nguyenvanvinh/controlTB"; //publish
+
+var mqttTopicInforTB = "nguyenvanvinh/inforTBALL";//subscribe
+
+var mqttTopicInforTBNow = "nguyenvanvinh/inforTBRelay"; //subscribe
+
 var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Math.random() * 100, 10));  
   client.onConnectionLost = onConnectionLost;  
   client.onMessageArrived = onMessageArrived;
@@ -242,8 +248,8 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
   function onConnect()
   {
       console.log("Connect tới Server");
-      client.subscribe("nguyenducmanh/inforTB");
-      client.subscribe("nguyenducmanh/inforTBNow");	 		
+      client.subscribe(mqttTopicInforTB);
+      client.subscribe(mqttTopicInforTBNow);	 		
   }  
   
   function doFail(e) {
@@ -268,7 +274,7 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
       console.log("Data ESP:" + message.payloadString);
       var topicSub = message.destinationName;
   
-      if(topicSub == "nguyenducmanh/inforTB")
+      if(topicSub == mqttTopicInforTB)
       {
           var dataInforTBAll = message.payloadString;
   
@@ -336,7 +342,7 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
               flagMessArrive = true;
           } 
       }
-      if(topicSub == "nguyenducmanh/inforTBNow")
+      if(topicSub == mqttTopicInforTBNow)
       {
           var dataInforTBARelay = message.payloadString;
           if(dataInforTBARelay == 11)
@@ -406,12 +412,12 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
   checkbox_lamp_1.addEventListener('change', function () {
     let status = checkbox_lamp_1.checked;
     if (status == true) {
-      client.send("nguyenducmanh/controlTB", "11", 2, false);
+      client.send(mqttTopicControlTB, "11", 2, false);
       lamp1.classList.add('yellow');
       document.getElementById('status1').innerHTML = 'Bật';
 
     } else {
-      client.send("nguyenducmanh/controlTB", "10", 2, false);
+      client.send(mqttTopicControlTB, "10", 2, false);
       lamp1.classList.remove('yellow');
       document.getElementById('status1').innerHTML = 'Tắt';
 
@@ -423,11 +429,11 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
   checkbox_lamp_2.addEventListener('change', function () {
     let status = checkbox_lamp_2.checked;
     if (status == true) {
-      client.send("nguyenducmanh/controlTB", "21", 2, false);
+      client.send(mqttTopicControlTB, "21", 2, false);
       lamp2.classList.add('yellow');
       document.getElementById('status2').innerHTML = 'Bật';
     } else {
-      client.send("nguyenducmanh/controlTB", "20", 2, false)
+      client.send(mqttTopicControlTB, "20", 2, false)
       lamp2.classList.remove('yellow');
       document.getElementById('status2').innerHTML = 'Tắt';
     }
@@ -438,11 +444,11 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
   checkbox_lamp_3.addEventListener('change', function () {
     let status = checkbox_lamp_3.checked;
     if (status == true) {
-      client.send("nguyenducmanh/controlTB", "31", 2, false);
+      client.send(mqttTopicControlTB, "31", 2, false);
       lamp3.classList.add('yellow');
       document.getElementById('status3').innerHTML = 'Bật';
     } else {
-      client.send("nguyenducmanh/controlTB", "30", 2, false);
+      client.send(mqttTopicControlTB, "30", 2, false);
       lamp3.classList.remove('yellow');
       document.getElementById('status3').innerHTML = 'Tắt';
     }
@@ -453,11 +459,11 @@ var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Ma
   checkbox_lamp_4.addEventListener('change', function () {
     let status = checkbox_lamp_4.checked;
     if (status == true) {
-      client.send("nguyenducmanh/controlTB", "41", 2, false);
+      client.send(mqttTopicControlTB, "41", 2, false);
       lamp4.classList.add('yellow');
       document.getElementById('status4').innerHTML = 'Bật';
     } else {
-      client.send("nguyenducmanh/controlTB", "40", 2, false);
+      client.send(mqttTopicControlTB, "40", 2, false);
       lamp4.classList.remove('yellow');
       document.getElementById('status4').innerHTML = 'Tắt';
     }

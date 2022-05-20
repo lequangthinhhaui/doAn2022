@@ -3,7 +3,7 @@
 #include <LiquidCrystal_I2C.h>
 #include "RTClib.h"
 #include <EEPROM.h>
-
+#include <Wire.h>
 
 
 //user button

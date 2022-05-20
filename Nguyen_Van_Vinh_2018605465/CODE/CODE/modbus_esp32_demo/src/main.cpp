@@ -11,29 +11,19 @@
 
 
 #include <PubSubClient.h>
-
 #include <WiFi.h>
-
-#include <LiquidCrystal_I2C.h>
-
 #include <ArduinoJson.h>
-
 #include <Wire.h>
-#include <DHT.h>
 #include <LiquidCrystal_I2C.h>
-#include <Adafruit_Sensor.h>
 
 
 //ota update
 // #include <ESPAsyncWebServer.h>
 // #include <AsyncElegantOTA.h>
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);  
 
-
-
-#define ssid "dangcongtinh"
-#define password "dangcongtinh123"
+#define ssid "Zoro"
+#define password "minhdien04"
 
 
 #define mqtt_server "broker.hivemq.com" 
@@ -41,11 +31,11 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define mqtt_pwd ""
 const uint16_t mqtt_port = 1883; 
 
-String mqtt_topic_control_TB = "dangcongtinh/controlTB"; //subscribe
+String mqtt_topic_control_TB = "nguyenvanvinh/controlTB"; //subscribe
 
-String mqtt_topic_infor_TB_ALL = "dangcongtinh/inforTBALL";//publish
+String mqtt_topic_infor_TB_ALL = "nguyenvanvinh/inforTBALL";//publish
 
-String mqtt_topic_infor_TB_Relay = "dangcongtinh/inforTBRelay"; //publish
+String mqtt_topic_infor_TB_Relay = "nguyenvanvinh/inforTBRelay"; //publish
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -83,16 +73,19 @@ float dataFloat = 0;
 //button variable
 int den1Pin = 15;
 int den2Pin = 4;
-int den3Pin = 5;
-int quatPin = 18;
-int coiPin = 19;
+int den3Pin = 16;
+int den4Pin = 17;
+int denAllPin = 5;
+int remPin = 18;
 
 //output pin
-int den1OutPin = 14;
-int den2OutPin = 27;
-int den3OutPin = 26;
-int quatOutPin = 25;
-int coiOutPin = 33;
+int den1OutPin = 26;
+int den2OutPin = 25;
+int den3OutPin = 33;
+int den4OutPin = 23;
+int den5OutPin = 32;
+int l298COutPin = 14;
+int l298DOutPin = 27;
 
 
 int button1PressCount = 0;
@@ -100,11 +93,15 @@ int button2PressCount = 0;
 int button3PressCount = 0;
 int button4PressCount = 0;
 int button5PressCount = 0;
+int button6PressCount = 0;
 
 
-float nhietDo = 0.0;
-float doAm = 0.0;
-bool canhBao = 0;
+//pwm channel
+int PWMchannel0 = 0;
+int PWMchannel1 = 1;
+void l298nInit();
+void rotateNotClock();
+void rotateClock();
 
 
 void pinInit();
@@ -115,7 +112,7 @@ void handleButton2Task();
 void handleButton3Task();
 void handleButton4Task();
 void handleButton5Task();
-
+void handleButton6Task();
 
 
 void handleButton1(void *parameter);
@@ -123,6 +120,7 @@ void handleButton2(void *parameter);
 void handleButton3(void *parameter);
 void handleButton4(void *parameter);
 void handleButton5(void *parameter);
+void handleButton6(void *parameter);
 
 
 
@@ -134,24 +132,18 @@ void handleAutoTask();
 void handleAuto(void *parameter);
 
 
-#define DHTPIN 13     // what pin we're connected to
-#define DHTTYPE DHT22  // DHT 22  (AM2302)
-DHT dht(DHTPIN, DHTTYPE); //// Initialize DHT sensor for normal 16mhz Arduino
-
 
 void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
   pinInit();
-  dht.begin();
+  l298nInit();
   setup_wifi() ;
+
 
   client.setServer(mqtt_server, mqtt_port); 
   client.setCallback(callback);
 
-  //LCD init
-  lcd.init();                    
-  lcd.backlight();
   taskInit();
 
   
@@ -230,13 +222,13 @@ void callback(char* topic, byte* payload, unsigned int length)
         ///button 4
     else if (dataInt == 40)
     {
-       digitalWrite(quatOutPin, LOW);
+       digitalWrite(den4OutPin, LOW);
        button4PressCount = 0;
        client.publish(mqtt_topic_infor_TB_Relay.c_str(), "40");
     }
     else if (dataInt == 41)
     {
-       digitalWrite(quatOutPin, HIGH);
+       digitalWrite(den4OutPin, HIGH);
        button4PressCount = 1;
        client.publish(mqtt_topic_infor_TB_Relay.c_str(), "41");
     }
@@ -283,14 +275,11 @@ void sendDataMQTT()
 {
   DynamicJsonDocument doc(1024);
   char inforInverterBuff[256];
-  doc["nhietdo"] = nhietDo;
-  doc["doam"]   =  doAm;
-  doc["baochay"] =  canhBao;
   doc["den1"] = button1PressCount;
   doc["den2"]   =  button2PressCount;
   doc["den3"] =  button3PressCount;
-  doc["quat"]   =  button4PressCount;
-  doc["coi"] =  button5PressCount;
+  doc["den3"] =  button4PressCount;
+  doc["den4"]   =  button5PressCount;
   serializeJson(doc, inforInverterBuff);
   client.publish(mqtt_topic_infor_TB_ALL.c_str(), inforInverterBuff);
 }
@@ -377,6 +366,19 @@ void handleButton5Task()
     NULL,         // Task handle
     1);
 }
+
+void handleButton6Task()
+{
+  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
+    handleButton6,  // Function to be called
+    "handleButton6",   // Name of task
+    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
+    NULL,         // Parameter to pass to function
+    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
+    NULL,         // Task handle
+    1);
+}
+
 
 
 void sendDataTask()
@@ -479,8 +481,8 @@ void handleButton3(void *parameter) {
 
 void handleButton4(void *parameter) {
   while (1) {
-    while (digitalRead(quatPin) == HIGH);
-    while (digitalRead(quatPin) == LOW);
+    while (digitalRead(den4Pin) == HIGH);
+    while (digitalRead(den4Pin) == LOW);
     button4PressCount ++;
     if (button4PressCount == 2)
     {
@@ -488,12 +490,12 @@ void handleButton4(void *parameter) {
     }
     if (button4PressCount == 0)
     {
-      digitalWrite(quatOutPin, LOW);
+      digitalWrite(den4OutPin, LOW);
       client.publish(mqtt_topic_infor_TB_Relay.c_str(), "40");
     }
     else if (button4PressCount == 1)
     {
-      digitalWrite(quatOutPin, HIGH);
+      digitalWrite(den4OutPin, HIGH);
       client.publish(mqtt_topic_infor_TB_Relay.c_str(), "41");
 
     }
@@ -503,8 +505,8 @@ void handleButton4(void *parameter) {
 
 void handleButton5(void *parameter) {
   while (1) {
-    while (digitalRead(coiPin) == HIGH);
-    while (digitalRead(coiPin) == LOW);
+    while (digitalRead(denAllPin) == HIGH);
+    while (digitalRead(denAllPin) == LOW);
     button5PressCount ++;
     if (button5PressCount == 2)
     {
@@ -512,13 +514,57 @@ void handleButton5(void *parameter) {
     }
     if (button5PressCount == 0)
     {
-      digitalWrite(coiOutPin, LOW);
+      digitalWrite(den1OutPin, LOW);
+      button1PressCount = 0;
+      digitalWrite(den2OutPin, LOW);
+      button2PressCount = 0;
+      digitalWrite(den3OutPin, LOW);
+      button3PressCount = 0;
+      digitalWrite(den4OutPin, LOW);
+      button4PressCount = 0;
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "10");
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "20");
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "30");
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "40");
       client.publish(mqtt_topic_infor_TB_Relay.c_str(), "50");
     }
     else if (button5PressCount == 1)
     {
-      digitalWrite(coiOutPin, HIGH);
+      digitalWrite(den1OutPin, HIGH);
+      button1PressCount = 1;
+      digitalWrite(den2OutPin, HIGH);
+      button2PressCount = 1;
+      digitalWrite(den3OutPin, HIGH);
+      button3PressCount = 1;
+      digitalWrite(den4OutPin, HIGH);
+      button4PressCount = 1;
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "11");
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "21");
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "31");
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "41");
       client.publish(mqtt_topic_infor_TB_Relay.c_str(), "51");
+    }
+  }
+}
+
+void handleButton6(void *parameter) {
+  while (1) {
+    while (digitalRead(remPin) == HIGH);
+    while (digitalRead(remPin) == LOW);
+    button6PressCount ++;
+    if (button6PressCount == 2)
+    {
+      button6PressCount = 0;
+    }
+    if (button6PressCount == 0)
+    {
+      rotateClock();
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "60");
+    }
+    else if (button6PressCount == 1)
+    {
+      rotateNotClock();
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "61");
     }
   }
 }
@@ -526,72 +572,28 @@ void handleButton5(void *parameter) {
 
 void sendData(void *parameter) {
   while (1) {
-  nhietDo = dht.readTemperature();
-  doAm = dht.readHumidity();
-  //set con tro hang thu nhat, cot thu nhat
-  lcd.setCursor(0, 0);
-  //in ra man hinh
-  lcd.print("Temp: ");
-  lcd.setCursor(6, 0);
-  lcd.print(nhietDo);
-  lcd.setCursor(13, 0);
-  lcd.write(0xDF);
-  lcd.print("C");
-  //set con tro hang thu hai, cot thu nhat
-  lcd.setCursor(0,1);
-  lcd.print("Humi: ");
-  lcd.setCursor(6, 1);
-  lcd.print(doAm);
-  lcd.setCursor(13, 1);
-  lcd.print("%");
-
-  vTaskDelay(2000 / portTICK_PERIOD_MS);
+    sendDataMQTT();
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
   }
 }
 
-bool flagFanAuto = false;
-bool flagCoiAuto = false;
 
 void handleAuto(void *parameter) {
   while (1) {
-  uint16_t dataFlame = analogRead(36);
-  Serial.println(dataFlame);
+    uint16_t dataLight = analogRead(13);
+    Serial.println(dataLight);
 
 
-  if(dataFlame <= 10 && flagCoiAuto == false)
-  {
-      button5PressCount = 1;
-      digitalWrite(coiOutPin, HIGH);
-      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "51");
-      flagCoiAuto = true;
-      canhBao = 1;
-  }
-  else if(dataFlame > 10 && flagCoiAuto == true)
-  {
-      button5PressCount = 0;
-      digitalWrite(coiOutPin, LOW);
-      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "50");
-      flagCoiAuto = false;
-      canhBao = 0;    
-  }
-
-
-  if(doAm >= 80 && flagFanAuto == false)
-  {
-      button4PressCount = 1;
-      digitalWrite(quatOutPin, HIGH);
-      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "41");
-      flagFanAuto = true;
-  }
-  else if(doAm < 80 && flagFanAuto == true)
-  {
-      button4PressCount = 0;
-      digitalWrite(quatOutPin, LOW);
-      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "40");
-      flagFanAuto = false;    
-  }
-
-  vTaskDelay(2000 / portTICK_PERIOD_MS);
+    if(dataLight <= 10)
+    {
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        digitalWrite(den5OutPin, HIGH);
+    }
+    else if(dataLight > 10)
+    {
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+        digitalWrite(den5OutPin, LOW);
+    }
   }
 }
 
@@ -606,8 +608,10 @@ void taskInit()
   handleButton1Task();
   handleButton2Task();
   handleButton3Task();
-  handleButton4Task();
-  handleButton5Task();
+   handleButton4Task();
+   handleButton5Task();
+   handleButton6Task();
+
   
 }
 
@@ -628,12 +632,45 @@ void pinInit()
   pinMode(den1Pin, INPUT);
   pinMode(den2Pin, INPUT);
   pinMode(den3Pin, INPUT);
-  pinMode(quatPin, INPUT);
-  pinMode(coiPin, INPUT);
+  pinMode(den4Pin, INPUT);
+  pinMode(denAllPin, INPUT);
+  pinMode(remPin, INPUT);
 
   pinMode(den1OutPin, OUTPUT);
   pinMode(den2OutPin, OUTPUT);
   pinMode(den3OutPin, OUTPUT);
-  pinMode(quatOutPin, OUTPUT);
-  pinMode(coiOutPin, OUTPUT);
+  pinMode(den4OutPin, OUTPUT);
+  pinMode(den5OutPin, OUTPUT);
+}
+
+void l298nInit()
+{
+  ledcSetup(PWMchannel0, 5000, 8);
+  ledcSetup(PWMchannel1, 5000, 8);
+  ledcAttachPin(l298COutPin, 0);
+  ledcAttachPin(l298DOutPin, 1);
+}
+
+void rotateClock()
+{
+  for(int dutyCycle = 100; dutyCycle <= 255; dutyCycle++)
+  {   
+    ledcWrite(PWMchannel0, dutyCycle);
+    ledcWrite(PWMchannel1, 0);
+    delay(20);  
+  }
+    ledcWrite(PWMchannel0, 0);
+    ledcWrite(PWMchannel1, 0);
+}
+
+void rotateNotClock()
+{
+  for(int dutyCycle = 100; dutyCycle <= 255; dutyCycle++)
+  {   
+    ledcWrite(PWMchannel0, 0);
+    ledcWrite(PWMchannel1, dutyCycle);
+    delay(20);  
+  }
+    ledcWrite(PWMchannel0, 0);
+    ledcWrite(PWMchannel1, 0);
 }
