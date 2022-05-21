@@ -1,0 +1,8 @@
+Change Component Designator: OldDesignator=ab NewDesignator=R23
+Change Net Name : Old Net Name=NetC8_2 New Net Name=220V~F
+Added Pin To Net: NetName=220V~F1 Pin=FL1-2
+Added Pin To Net: NetName=220V~F1 Pin=FL1-3
+Added Pin To Net: NetName=220V~F1 Pin=HILINK1-1
+Added Pin To Net: NetName=220V~F1 Pin=HILINK1-2
+Added Net: Name=220V~F1
+Added Room: Name=Sheet1
