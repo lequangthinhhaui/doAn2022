@@ -14,9 +14,9 @@
 #define BTN_06 23
 
 //output
-#define OUT_01 14
+#define OUT_03 14
 #define OUT_02 27
-#define OUT_03 26
+#define OUT_01 26
 #define OUT_04 25
 #define OUT_05 33
 #define OUT_06 32
@@ -31,8 +31,9 @@
 #define mqtt_pwd ""
 const uint16_t mqtt_port = 1883;
 
-String mqtt_topic_pub = "buiquoctuan/btncontrol";
-String mqtt_topic_sub = "buiquoctuan/btnrespon";
+String mqtt_topic_pub = "buiquoctuan/relayInfor";
+String mqtt_topic_sub = "buiquoctuan/relayControl";
+String mqtt_topic_pub_now = "buiquoctuan/relayInforNow";
 
 //user variable
 long lastMsg = 0;
@@ -248,12 +249,12 @@ void handleButton1(void *parameter) {
     if (button1PressCount == 0)
     {
       digitalWrite(OUT_01, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "10");
+      client.publish(mqtt_topic_pub_now.c_str(), "10");
     }
     else if (button1PressCount == 1)
     {
       digitalWrite(OUT_01, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "11");
+      client.publish(mqtt_topic_pub_now.c_str(), "11");
     }
   }
 }
@@ -272,12 +273,12 @@ void handleButton2(void *parameter) {
     if (button2PressCount == 0)
     {
       digitalWrite(OUT_02, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "20");
+      client.publish(mqtt_topic_pub_now.c_str(), "20");
     }
     else if (button2PressCount == 1)
     {
       digitalWrite(OUT_02, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "21");
+      client.publish(mqtt_topic_pub_now.c_str(), "21");
     }
   }
 }
@@ -297,12 +298,12 @@ void handleButton3(void *parameter) {
     if (button3PressCount == 0)
     {
       digitalWrite(OUT_03, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "30");
+      client.publish(mqtt_topic_pub_now.c_str(), "30");
     }
     else if (button3PressCount == 1)
     {
       digitalWrite(OUT_03, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "31");
+      client.publish(mqtt_topic_pub_now.c_str(), "31");
     }
   }
 }
@@ -319,12 +320,12 @@ void handleButton4(void *parameter) {
     if (button4PressCount == 0)
     {
       digitalWrite(OUT_04, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "40");
+      client.publish(mqtt_topic_pub_now.c_str(), "40");
     }
     else if (button4PressCount == 1)
     {
       digitalWrite(OUT_04, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "41");
+      client.publish(mqtt_topic_pub_now.c_str(), "41");
     }
   }
 }
@@ -342,12 +343,12 @@ void handleButton5(void *parameter) {
     if (button5PressCount == 0)
     {
       digitalWrite(OUT_05, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "50");
+      client.publish(mqtt_topic_pub_now.c_str(), "50");
     }
     else if (button5PressCount == 1)
     {
       digitalWrite(OUT_05, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "51");
+      client.publish(mqtt_topic_pub_now.c_str(), "51");
     }
   }
 }
@@ -364,12 +365,12 @@ void handleButton6(void *parameter) {
     if (button6PressCount == 0)
     {
       digitalWrite(OUT_06, LOW);
-      client.publish(mqtt_topic_pub.c_str(), "60");
+      client.publish(mqtt_topic_pub_now.c_str(), "60");
     }
     else if (button6PressCount == 1)
     {
       digitalWrite(OUT_06, HIGH);
-      client.publish(mqtt_topic_pub.c_str(), "61");
+      client.publish(mqtt_topic_pub_now.c_str(), "61");
     }
   }
 }
@@ -434,39 +435,39 @@ void callback(char* topic, byte* payload, unsigned int length)
   {
     button1PressCount = 1;
     digitalWrite(OUT_01, HIGH);
-    client.publish(mqtt_topic_pub.c_str(), "11");
+    client.publish(mqtt_topic_pub_now.c_str(), "11");
   }
   else if (dataInt == 10)
   {
     button1PressCount = 0;
     digitalWrite(OUT_01, LOW);
-    client.publish(mqtt_topic_pub.c_str(), "10");
+    client.publish(mqtt_topic_pub_now.c_str(), "10");
   }
   ///button 2
   else if (dataInt == 21)
   {
     button2PressCount = 1;
     digitalWrite(OUT_02, HIGH);
-    client.publish(mqtt_topic_pub.c_str(), "21");
+    client.publish(mqtt_topic_pub_now.c_str(), "21");
   }
   else if (dataInt == 20)
   {
     button2PressCount = 0;
     digitalWrite(OUT_02, LOW);
-    client.publish(mqtt_topic_pub.c_str(), "20");
+    client.publish(mqtt_topic_pub_now.c_str(), "20");
   }
   ///button 3
   else if (dataInt == 31)
   {
     button2PressCount = 1;
     digitalWrite(OUT_03, HIGH);
-    client.publish(mqtt_topic_pub.c_str(), "31");
+    client.publish(mqtt_topic_pub_now.c_str(), "31");
   }
   else if (dataInt == 30)
   {
     button3PressCount = 0;
     digitalWrite(OUT_03, LOW);
-    client.publish(mqtt_topic_pub.c_str(), "30");
+    client.publish(mqtt_topic_pub_now.c_str(), "30");
   }
 
   ///button 4
@@ -474,26 +475,26 @@ void callback(char* topic, byte* payload, unsigned int length)
   {
     button4PressCount = 1;
     digitalWrite(OUT_04, HIGH);
-    client.publish(mqtt_topic_pub.c_str(), "41");
+    client.publish(mqtt_topic_pub_now.c_str(), "41");
   }
   else if (dataInt == 40)
   {
     button4PressCount = 0;
     digitalWrite(OUT_04, LOW);
-    client.publish(mqtt_topic_pub.c_str(), "40");
+    client.publish(mqtt_topic_pub_now.c_str(), "40");
   }
   ///button 5
   else if (dataInt == 51)
   {
     button5PressCount = 1;
     digitalWrite(OUT_05, HIGH);
-    client.publish(mqtt_topic_pub.c_str(), "51");
+    client.publish(mqtt_topic_pub_now.c_str(), "51");
   }
   else if (dataInt == 50)
   {
     button5PressCount = 0;
     digitalWrite(OUT_05, LOW);
-    client.publish(mqtt_topic_pub.c_str(), "50");
+    client.publish(mqtt_topic_pub_now.c_str(), "50");
   }
 
   ///button 6
@@ -501,13 +502,13 @@ void callback(char* topic, byte* payload, unsigned int length)
   {
     button6PressCount = 1;
     digitalWrite(OUT_06, HIGH);
-    client.publish(mqtt_topic_pub.c_str(), "61");
+    client.publish(mqtt_topic_pub_now.c_str(), "61");
   }
   else if (dataInt == 60)
   {
     button6PressCount = 0;
     digitalWrite(OUT_06, LOW);
-    client.publish(mqtt_topic_pub.c_str(), "60");
+    client.publish(mqtt_topic_pub_now.c_str(), "60");
   }
 }
 

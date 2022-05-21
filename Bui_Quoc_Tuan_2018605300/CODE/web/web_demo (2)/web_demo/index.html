@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./fonts/fontawesome-free-6.1.1-web/css/all.css">
   <link rel="stylesheet" href="./fonts/fontawesome-free-6.1.1-web/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+
 </head>
 <body>
     <div id="main">
@@ -90,50 +92,289 @@
   function open1() {
     document.getElementById('status1').innerHTML = 'Bật';
     document.getElementById('fan1').style.color = 'red';
+    client.send(mqttTopicControlTB, "11", 2, false);
   }
   function close1() {
     document.getElementById('status1').innerHTML = 'Tắt';
     document.getElementById('fan1').style.color = 'black';
+    client.send(mqttTopicControlTB, "10", 2, false);
   }
   function open2() {
     document.getElementById('status2').innerHTML = 'Bật';
     document.getElementById('fan2').style.color = 'red';
+    client.send(mqttTopicControlTB, "21", 2, false);
+
   }
   function close2() {
     document.getElementById('status2').innerHTML = 'Tắt';
     document.getElementById('fan2').style.color = 'black';
+    client.send(mqttTopicControlTB, "20", 2, false);
+
   }
   function open3() {
     document.getElementById('status3').innerHTML = 'Bật';
     document.getElementById('coi1').style.color = 'red';
+    client.send(mqttTopicControlTB, "31", 2, false);
+
   }
   function close3() {
     document.getElementById('status3').innerHTML = 'Tắt';
     document.getElementById('coi1').style.color = 'black';
+    client.send(mqttTopicControlTB, "30", 2, false);
+
   }
   function open4() {
     document.getElementById('status4').innerHTML = 'Bật';
     document.getElementById('coi2').style.color = 'red';
+    client.send(mqttTopicControlTB, "41", 2, false);
+
   }
   function close4() {
     document.getElementById('status4').innerHTML = 'Tắt';
     document.getElementById('coi2').style.color = 'black';
+    client.send(mqttTopicControlTB, "40", 2, false);
+
   }
   function open5() {
     document.getElementById('status5').innerHTML = 'Bật';
     document.getElementById('camera1').style.color = 'red';
+    client.send(mqttTopicControlTB, "51", 2, false);
+
   }
   function close5() {
     document.getElementById('status5').innerHTML = 'Tắt';
     document.getElementById('camera1').style.color = 'black';
+    client.send(mqttTopicControlTB, "50", 2, false);
+
   }
   function open6() {
     document.getElementById('status6').innerHTML = 'Bật';
     document.getElementById('camera2').style.color = 'red';
+    client.send(mqttTopicControlTB, "61", 2, false);
+
   }
   function close6() {
     document.getElementById('status6').innerHTML = 'Tắt';
     document.getElementById('camera2').style.color = 'black';
+    client.send(mqttTopicControlTB, "60", 2, false);
+
   }
 </script>
+
+<script>
+
+  var deviceSTT1 = document.getElementById('status1');
+  var deviceColor1 = document.getElementById('fan1');
+
+  var deviceSTT2 = document.getElementById('status2');
+  var deviceColor2 = document.getElementById('fan2');
+
+  var deviceSTT3= document.getElementById('status3');
+  var deviceColor3 = document.getElementById('coi1');
+
+  var deviceSTT4 = document.getElementById('status4');
+  var deviceColor4 = document.getElementById('coi2');
+
+  var deviceSTT5 = document.getElementById('status5');
+  var deviceColor5 = document.getElementById('camera1');
+
+  var deviceSTT6 = document.getElementById('status6');
+  var deviceColor6 = document.getElementById('camera2');
+
+    var mqttTopicControlTB = "buiquoctuan/relayControl"; //publish
+    
+    var mqttTopicInforTB = "buiquoctuan/relayInfor";//subscribe
+    
+    var mqttTopicInforTBNow = "buiquoctuan/relayInforNow"; //subscribe
+    
+    var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Math.random() * 100, 10));  
+      client.onConnectionLost = onConnectionLost;  
+      client.onMessageArrived = onMessageArrived;
+      var options = { useSSL: false,userName: "",password: " ",onSuccess: onConnect , onFailure: doFail }
+      
+      client.connect(options);  
+          
+      function onConnect()
+      {
+          console.log("Connect tới Server");
+          client.subscribe(mqttTopicInforTB);
+          client.subscribe(mqttTopicInforTBNow);	 		
+      }  
+      
+      function doFail(e) {
+          console.log("Không kết nối được tới server");
+          console.log(e);
+      }
+      
+      function onConnectionLost(responseObject) 
+      {
+          if (responseObject.errorCode !== 0) 
+          {
+          console.log("error");
+          console.log("onConnectionLost:" + responseObject.errorMessage);
+          }
+      } 
+      
+  
+  
+      var flagMessArrive = false;
+      
+      function onMessageArrived(message) 
+      {
+          console.log("Data ESP:" + message.payloadString);
+          var topicSub = message.destinationName;
+      
+          if(topicSub == mqttTopicInforTB)
+          {
+              var dataInforTBAll = message.payloadString;
+      
+              var dataInforTBAllJson = JSON.parse(dataInforTBAll);
+    
+      
+              if(flagMessArrive == false)
+              {
+                  if(dataInforTBAllJson.den1 == 1)
+                  {
+                    deviceSTT1. innerHTML = "Bật";
+                    deviceColor1.style.color = "red";
+                  }
+                  else
+                  {
+                    deviceSTT1. innerHTML = "Tắt";
+                    deviceColor1.style.color = "black";
+                  }
+      
+                  if(dataInforTBAllJson.den2 == 1)
+                  {
+                    deviceSTT2. innerHTML = "Bật";
+                    deviceColor2.style.color = "red";
+                  }
+                  else
+                  {
+                    deviceSTT2. innerHTML = "Tắt";
+                    deviceColor2.style.color = "black";
+                  }
+      
+          
+                  if(dataInforTBAllJson.den3 == 1)
+                  {
+                    deviceSTT3. innerHTML = "Bật";
+                    deviceColor3.style.color = "red";
+                  }
+                  else
+                  {
+                    deviceSTT3. innerHTML = "Tắt";
+                    deviceColor3.style.color = "black";
+                  }
+      
+          
+                  if(dataInforTBAllJson.den4 == 1)
+                  {
+                    deviceSTT4. innerHTML = "Bật";
+                    deviceColor4.style.color = "red";
+                  }
+                  else
+                  {
+                    deviceSTT4. innerHTML = "Tắt";
+                    deviceColor4.style.color = "black";
+                  }
+                  if(dataInforTBAllJson.den5 == 1)
+                  {
+                    deviceSTT5. innerHTML = "Bật";
+                    deviceColor5.style.color = "red";
+                  }
+                  else
+                  {
+                    deviceSTT5. innerHTML = "Tắt";
+                    deviceColor5.style.color = "black";
+                  }
+                  if(dataInforTBAllJson.den6 == 1)
+                  {
+                    deviceSTT6. innerHTML = "Bật";
+                    deviceColor6.style.color = "red";
+                  }
+                  else
+                  {
+                    deviceSTT6. innerHTML = "Tắt";
+                    deviceColor6.style.color = "black";
+                  }
+                  flagMessArrive = true;
+              } 
+          }
+          if(topicSub == mqttTopicInforTBNow)
+          {
+              var dataInforTBARelay = message.payloadString;
+              if(dataInforTBARelay == 11)
+              {
+                deviceSTT1. innerHTML = "Bật";
+                deviceColor1.style.color = "red";
+              }
+              else if(dataInforTBARelay == 10)
+              {
+                deviceSTT1. innerHTML = "Tắt";
+                deviceColor1.style.color = "black";
+              }
+      
+              if(dataInforTBARelay == 21)
+              {
+                deviceSTT2. innerHTML = "Bật";
+                deviceColor2.style.color = "red";
+              }
+              else if(dataInforTBARelay == 20)
+              {
+                deviceSTT2. innerHTML = "Tắt";
+                deviceColor2.style.color = "black";
+              }
+      
+      
+              if(dataInforTBARelay == 31)
+              {
+                deviceSTT3. innerHTML = "Bật";
+                deviceColor3.style.color = "red";
+              }
+              else if(dataInforTBARelay == 30)
+              {
+                deviceSTT3. innerHTML = "Tắt";
+                    deviceColor3.style.color = "black";
+              }
+      
+      
+              if(dataInforTBARelay == 41)
+              {
+                deviceSTT4. innerHTML = "Bật";
+                deviceColor4.style.color = "red";
+              }
+              else if(dataInforTBARelay == 40)
+              {
+                deviceSTT4. innerHTML = "Tắt";
+                deviceColor4.style.color = "black";
+              }
+  
+              if(dataInforTBARelay == 51)
+              {
+                deviceSTT5. innerHTML = "Bật";
+                deviceColor5.style.color = "red";
+              }
+              else if(dataInforTBARelay == 50)
+              {
+                deviceSTT5. innerHTML = "Tắt";
+                deviceColor5.style.color = "black";
+              }
+  
+  
+              if(dataInforTBARelay == 61)
+              {
+                deviceSTT6. innerHTML = "Bật";
+                deviceColor6.style.color = "red";
+              }
+              else if(dataInforTBARelay == 60)
+              {
+                deviceSTT6. innerHTML = "Tắt";
+                deviceColor6.style.color = "black";
+              }
+            }  
+          }
+  
+  
+  </script>
 </html>
