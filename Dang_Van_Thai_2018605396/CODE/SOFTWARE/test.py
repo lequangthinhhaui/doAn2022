@@ -56,13 +56,20 @@ cap = cv2.VideoCapture(2)
 def thread_function():
     while True:
         print ("Message from arduino: ")
-        msg = ser.readline()
+        try:
+          msg = ser.readline()
+        except:
+          print("An exception occurred")
         print(msg.decode())
 
 def thread_function_2():
     while True:
       if bboxImage is not None and dataImage != "":
-        ser.write(dataImage.encode())
+        try:
+          ser.write(dataImage.encode())
+        except:
+          print("An exception occurred")        
+
         time.sleep(5)
         # print(dataImage)
 

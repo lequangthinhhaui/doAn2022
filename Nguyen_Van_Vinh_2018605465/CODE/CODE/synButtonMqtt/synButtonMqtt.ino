@@ -605,13 +605,13 @@ void handleAuto(void *parameter) {
   while (1) {
 
 
-    if(dataLight <= 100)
+    if(dataLight <= 10)
     {
-//        digitalWrite(den5OutPin, HIGH);
+        digitalWrite(den5OutPin, HIGH);
     }
-    else if(dataLight > 100)
+    else if(dataLight > 10)
     {
-//        digitalWrite(den5OutPin, LOW);
+        digitalWrite(den5OutPin, LOW);
     }
     vTaskDelay(1000 / portTICK_PERIOD_MS);
   }
@@ -658,6 +658,12 @@ void pinInit()
   pinMode(den3OutPin, OUTPUT);
   pinMode(den4OutPin, OUTPUT);
   pinMode(den5OutPin, OUTPUT);
+
+  
+  pinMode(l298COutPin, OUTPUT);
+  pinMode(l298DOutPin, OUTPUT);
+  digitalWrite(l298COutPin, LOW);
+  digitalWrite(l298DOutPin, LOW);
 }
 
 void l298nInit()
