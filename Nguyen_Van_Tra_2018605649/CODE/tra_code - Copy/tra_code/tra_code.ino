@@ -1,43 +1,52 @@
 
+//định nghĩa chân cảm biến khoảng cách sr04 4, 5
+#define echoPin 4 
+#define trigPin 5 
 
-#define echoPin 4 // attach pin D2 Arduino to pin Echo of HC-SR04
-#define trigPin 5 //attach pin D3 Arduino to pin Trig of HC-SR04
-
-#include <Servo.h>
-#include <LiquidCrystal_I2C.h>
-
-
-//mp3
-#include "SoftwareSerial.h"
-#include "DFRobotDFPlayerMini.h"
-
-// Use pins 2 and 3 to communicate with DFPlayer Mini
-static const uint8_t PIN_MP3_TX = 2; // Connects to module's RX 
-static const uint8_t PIN_MP3_RX = 3; // Connects to module's TX 
-SoftwareSerial softwareSerial(PIN_MP3_RX, PIN_MP3_TX);
-DFRobotDFPlayerMini player;
+#include <Servo.h> //hàm điều khiển servo
+#include <LiquidCrystal_I2C.h> //hàm hiển thị lcd
 
 
-//khai bao cac servo su dung
-Servo servo1;
+//khai báo thư viện
+#include "SoftwareSerial.h" //giao tiếp với mp3
+#include "DFRobotDFPlayerMini.h" //thư viện của module mp3
+
+
+//khai báo chân giao tiếp giữa arduino và module mp3
+static const uint8_t PIN_MP3_TX = 2; 
+static const uint8_t PIN_MP3_RX = 3; 
+
+SoftwareSerial softwareSerial(PIN_MP3_RX, PIN_MP3_TX); //khai báo giao tiếp giữa module mp3 và arduino
+
+DFRobotDFPlayerMini player; //khởi tạo player điều khiển phát nhạc
+
+
+
+Servo servo1; //khai báo servo 1
+
 LiquidCrystal_I2C lcd(0x27, 16, 2); //lcd i2c 16x2
 
-// defines variables
-long duration; // variable for the duration of sound wave travel
-int distance = 11; 
-int servoPin = 10;
-int sensorPin = 8;
-int modePin = 7;
+//khai báo các biến sử dụng
+long duration; //biến thời gian truyền nhận
 
-int nguongFull = 10;
+int distance = 11;
+ 
+int servoPin = 10; //chân của servo là chân 10
+
+int sensorPin = 8; //chân sensor là chân 8
+
+int modePin = 7; //chân công tắc gạt
+
+int nguongFull = 10; //đặt ngưỡng mà thùng rác đầy
 
 void setup() {
+  
   pinMode(trigPin, OUTPUT); // Sets the trigPin as an OUTPUT
   pinMode(echoPin, INPUT); // Sets the echoPin as an INPUT
-  pinMode(echoPin, INPUT); // Sets the echoPin as an INPUT
+
   Serial.begin(9600); // // Serial Communication is starting with 9600 of baudrate speed
 
-  //mp3
+//khởi tạo giao tiếp giữa arduino với module mp3
     softwareSerial.begin(9600);
 
   // Start communication with DFPlayer Mini
@@ -46,6 +55,8 @@ void setup() {
   }
   Serial.println("Ultrasonic Sensor HC-SR04 Test"); // print some text in Serial Monitor
   Serial.println("with Arduino UNO R3");
+
+  //khởi tạo servo 1
   servo1.attach(servoPin);
   servo1.write(0);
 
@@ -55,18 +66,17 @@ void setup() {
   lcd.backlight();
 }
 
-bool flagFull = false;
+bool flagFull = false; //cờ báo full
+
+
 void loop() {
 
 
 if(digitalRead(modePin) == LOW)
 {
   if(digitalRead(8) == LOW && distance >= nguongFull)
-  {
-//    for(int i = 0; i < 180; i++)  
-//    {                                  
+  {                           
       servo1.write(180);                                  
-//    }
       lcd.setCursor(0, 0);
       lcd.print("Bo rac vao thung");
       player.volume(30);
@@ -122,6 +132,7 @@ else
 }   
 }
 
+//hàm đo thùng rác đã đầy hay chưa
 void readDistance(int &distance)
 {
   digitalWrite(trigPin, LOW);
@@ -129,7 +140,7 @@ void readDistance(int &distance)
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  duration = pulseIn(echoPin, HIGH);
-  distance = duration * 0.034 / 2; 
+  duration = pulseIn(echoPin, HIGH); // đo thời gian truyền nhận
+  distance = duration * 0.034 / 2;  //tính khoảng cách theo công tức s/2 = v*t
   delay(200);
 }

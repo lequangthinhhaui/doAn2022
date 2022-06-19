@@ -1,9 +1,0 @@
-Added Pin To Net: NetName=NetD2_2 Pin=D1-2
-Added Pin To Net: NetName=NetD2_2 Pin=D3-2
-Added Pin To Net: NetName=NetD2_2 Pin=HD4-2
-Added Pin To Net: NetName=NetD2_2 Pin=RL1-5
-Added Pin To Net: NetName=NetD2_2 Pin=RL3-5
-Added Pin To Net: NetName=NetD2_2 Pin=U1-4
-Added Pin To Net: NetName=NetD2_2 Pin=U4-4
-Change Net Name : Old Net Name=NetD2_2 New Net Name=+12
-Added Room: Name=Sheet1

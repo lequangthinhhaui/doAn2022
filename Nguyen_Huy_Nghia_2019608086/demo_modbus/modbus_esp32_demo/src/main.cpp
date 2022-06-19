@@ -9,22 +9,23 @@
   https://www.modbustools.com/download.html
 */
 
-#include <ModbusRTU.h>
+#include <ModbusRTU.h> //khai báo modbus
 
-#include <PubSubClient.h>
+#include <PubSubClient.h> //mqtt
 
-#include <WiFi.h>
+#include <WiFi.h> //wifi
 
-#include <LiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h> //LCD
 
-#include <ArduinoJson.h>
-
+#include <ArduinoJson.h> //Json 
 
 //ota update
 #include <ESPAsyncWebServer.h>
 #include <AsyncElegantOTA.h>
 
-LiquidCrystal_I2C lcd(0x27, 16, 2);  
+
+
+LiquidCrystal_I2C lcd(0x27, 16, 2);  //16x2
 
 #define REG 200
 #define REG_NUM 10
@@ -34,18 +35,24 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 #define MBUS_TXD_PIN   17         
 #define MBUS_RXD_PIN   16
 
+
+
 #define ssid "NGUYEN HUY NGHIA"
 #define password "1234567890"
 
-
+//broker 
 #define mqtt_server "broker.hivemq.com" 
 #define mqtt_user ""    
 #define mqtt_pwd ""
 const uint16_t mqtt_port = 1883; 
 
-String mqtt_topic_control_TB = "huynghia/controlTB";
+
+
+String mqtt_topic_control_TB = "huynghia/controlTB"; //
 
 String mqtt_topic_infor_TB = "huynghia/inforTB";//publish
+
+
 
 WiFiClient espClient;
 PubSubClient client(espClient);

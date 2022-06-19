@@ -1,3 +1,0 @@
-Added Pin To Net: NetName=GND Pin=HILINK1-3
-Added Pin To Net: NetName=VCC5 Pin=HILINK1-4
-Change Net Name : Old Net Name=220V~F1 New Net Name=NetFL1_2

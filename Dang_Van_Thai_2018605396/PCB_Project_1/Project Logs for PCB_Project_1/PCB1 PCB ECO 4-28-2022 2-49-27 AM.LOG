@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=SS_0 Pin=Arduino1-D2
-Removed Pin From Net: NetName=SS_1 Pin=Arduino1-D4
-Removed Pin From Net: NetName=OUT_1 Pin=Arduino1-D12
-Removed Pin From Net: NetName=OUT_0 Pin=Arduino1-D13
-Added Pin To Net: NetName=SS_1 Pin=Arduino1-D2
-Added Pin To Net: NetName=SS_0 Pin=Arduino1-D4
-Added Pin To Net: NetName=OUT_0 Pin=Arduino1-D12
-Added Pin To Net: NetName=OUT_1 Pin=Arduino1-D13

@@ -1,109 +1,97 @@
-#include <Servo.h>
+#include <Servo.h>  //khai báo thư viện servo
 
 
-//khai bao cac servo su dung
+//Khai báo 2 servo sử dụng là servo 1 và servo 2
 Servo servo1;
 Servo servo2;
+
+
 String readString;
 
 //khai bao bien
 
-const int ledPin = 27;  // coresponse to l2
-const int ledPin2 = 14; // 17 corresponds to GPIO17
+const int PWM1 = 5;  
+const int PWM2 = 3; 
 
 
+
+#define denPin A0
+#define camBienPin 8
 //servo goc
 int sv1AngleFirst = 0;
-int sv1AngleLast = 150;
-
 int sv2AngleFirst = 0;
-int sv2AngleLast = 150;
 
-//servo chan
+
+//khai báo chân servo
 int servo1Pin = 10;
 int servo2Pin = 6;
 
 
-//define function
+//định nghĩa function servo init
 void servoInit();
 
 void setup() {
   servoInit();
-  pinMode(3, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(8, OUTPUT);
+  pinMode(denPin, OUTPUT); //khai báo đầu ra cho đèn
+  pinMode(camBienPin, INPUT);//khai báo đầu vào cho cảm biến
   Serial.begin(9600);
+
+
+//cho băng tải chạy khi bật nguồn
+  analogWrite(PWM1, 0);
+  analogWrite(PWM2, 200);
 }
 
-bool flagsr1 = false;
 void loop() 
 {
-  while(!Serial.available()) {}
-  // serial read section
-  while (Serial.available())
+  if(digitalRead(camBienPin) == LOW)//gặp cảm biến
   {
-    if (Serial.available() >0)
-    {
-      String c = Serial.readStringUntil('@');
-      Serial.println(c);
-      if(c == "Sản phẩm 01")
+      //cho dừng băng tải
+      analogWrite(PWM1, 0);
+      analogWrite(PWM2, 0);
+
+      //chờ nhận đọc được dữ liệu từ camera
+      while(!Serial.available()) {}
+      while (Serial.available())
       {
-        digitalWrite(13, LOW);                          
-        servo2.write(50);               
+        if (Serial.available() >0) //nhận được
+        {
+          //cho băng tải chạy khi nhận được dữ liệu qr code
+          analogWrite(PWM1, 0);
+          analogWrite(PWM2, 200);
+          
+          String c = Serial.readStringUntil('@');
+          Serial.println(c);
+          
+          if(c == "Sản phẩm 01")
+          {
+            digitalWrite(13, LOW);
+            servo1.write(50);   //gat servo 1                       
+            servo2.write(0);
+            delay(10000);  //đợi phân loại xong
+            servo1.write(0);   //thu tay gạt về                       
+            servo2.write(0);        
+          }
+          
+          else if(c == "Sản phẩm 02")
+          {
+            digitalWrite(A0, HIGH);                           
+            servo1.write(0);                          
+            servo2.write(50);    //gat servo 2         
+            delay(10000); //đợi phân loại xong
+            servo1.write(0);   //thu tay gạt về                       
+            servo2.write(0);                 
+          }
+          else
+          {
+            //ko gạt servo
+            servo1.write(0);                          
+            servo2.write(0); 
+            delay(10000);//đợi phân loại xong           
+          }
+        }
       }
-      else if(c == "Sản phẩm 02")
-        digitalWrite(13, HIGH);
-        digitalWrite(13, LOW);                            
-        servo2.write(0);           
-        delay(1000);
-    }
   }
-
-//  analogWrite(3, 0);
-//  analogWrite(5, 200);
-//  if(digitalRead(8) == LOW)
-//  {
-////      analogWrite(3, 0);
-////      analogWrite(5, 0);
-////      Serial.println("stop");
-//    for(sv1AngleFirst = 0; sv1AngleFirst < 180; sv1AngleFirst++)  
-//    {                                  
-//      servo2.write(sv1AngleFirst);               
-//      delay(2);                   
-//    }
-//    delay(5000); 
-//  }
-//  else
-//      servo2.write(0); 
-  
-//   delay(1000);
-// // scan from 0 to 180 degrees
-
-//  for(sv1AngleFirst = 0; sv1AngleFirst < 180; sv1AngleFirst++)  
-//  {                                  
-//    servo2.write(0);               
-//    delay(15);                   
-//  } 
-//      servo2.write(0);
-//  // now scan back from 180 to 0 degrees
-
-//
-//  for(sv1AngleFirst = 10; sv1AngleFirst < 180; sv1AngleFirst++)  
-//  {                                  
-//    servo1.write(sv1AngleFirst);               
-//    delay(15);                   
-//  } 
-//  // now scan back from 180 to 0 degrees
-//  for(sv1AngleFirst = 180; sv1AngleFirst > 10; sv1AngleFirst--)    
-//  {                                
-//    servo1.write(sv1AngleFirst);           
-//    delay(15);       
-//  } 
-//   analogWrite(3, 200);
-//   analogWrite(5, 0);
-//   delay(1000);
-
-  
 }
 
 //function

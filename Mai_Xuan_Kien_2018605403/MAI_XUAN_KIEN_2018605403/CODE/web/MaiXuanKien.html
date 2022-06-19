@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Thiết kế hệ thống điều khiển và giám sát các thiết bị từ xa bằng WiFi sử dụng ESP32</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+  <!-- <script src="main.js"></script> -->
+  <link rel="stylesheet" href="/fonts/fontawesome-free-6.0.0-web/css/all.css">
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .heading {
+      position: relative;
+      padding: 2rem;
+    }
+
+    .btn {
+      font-size: 30px;
+      border-radius: 10px;
+      /* width:50%;     */
+      margin: 10px 0;
+    }
+
+    .col-3,
+    .col-6 {
+      border: 1px solid #8080FF;
+      margin: 2px;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 38px;
+      padding: 12px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* menu */
+    #menu {
+      /* display: none; */
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      z-index: 99;
+      transition: 0.3s ease;
+    }
+
+    #menu .menu-home {
+      width: 20%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: #ccc;
+      animation: modalTrans ease 1s;
+    }
+
+    .menu-home .menu-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      margin: 10px 0;
+    }
+
+    .menu-heading p {
+      font-size: 28px;
+    }
+
+    .menu-heading div {
+      font-size: 20px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .menu-heading div i {
+      color: #fff;
+      font-size: 36px;
+    }
+
+    .menu-home .menu-content {
+      padding: 12px;
+    }
+
+    .menu-content ul li {
+      list-style-type: none;
+      padding: 12px 0;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .menu-content ul li a {
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .display-none {
+      display: none;
+    }
+
+    @keyframes modalTrans {
+      from {
+        transform: translateX(40%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    /* Mobile */
+    @media screen and (max-width:739px) {
+      .content {
+        padding: 0 8px;
+      }
+
+      .col-3,
+      .col-6 {
+        flex: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .heading_3 {
+        display: none;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+
+      #menu .menu-home {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main">
+    <div class="heading jumbotron text-center">
+      <h1>Mai Xuân Kiên 2018605403</h1>
+      <h3 class="heading_3">Thiết kế hệ thống điều khiển và giám sát các thiết bị từ xa bằng WiFi sử dụng ESP32</h3>
+      <div class="menu-icon">
+        <i class="fa-solid fa-bars open-menu"></i>
+      </div>
+    </div>
+    <div class="container-fluid text-center ">
+      <div class="row justify-content-center">
+        <div class="col-3" id="room1">
+          <h3>Phòng 01</h3>
+          <h3 id="status-p1">Trạng Thái đèn: Đang Tắt</h3>
+          <button type="button" onclick="onClick1()" class="btn btn-primary btn-lg" id="on-button-1">Bật đèn</button>
+          <button type="button" onclick="offClick1()" class="btn btn-primary btn-lg" id="off-button-1">Tắt đèn</button>
+        </div>
+
+        <div class="col-3" id="room2">
+          <h3>Phòng 02</h3>
+          <h3 id="status-p2">Trạng Thái Quạt: Đang Tắt</h3>
+          <button type="button" onclick="onClick2()" class="btn btn-primary btn-lg">Bật quạt</button>
+          <button type="button" onclick="offClick2()" class="btn btn-primary btn-lg">Tắt quạt</button>
+        </div>
+
+        <div class="col-3" id="room3">
+          <h3>Phòng 03</h3>
+          <h3 id="status-p3">Trạng Thái đèn: Đang Tắt</h3>
+          <button type="button" onclick="onClick3()" class="btn btn-primary btn-lg">Bật đèn</button>
+          <button type="button" onclick="offClick3()" class="btn btn-primary btn-lg">Tắt đèn</button>
+        </div>
+
+        <div class="col-3" id="room4">
+          <h3>Phòng 04</h3>
+          <h3 id="status-p4">Trạng Thái đèn: Đang Tắt</h3>
+          <button type="button" onclick="onClick4()" class="btn btn-primary btn-lg">Bật đèn</button>
+          <button type="button" onclick="offClick4()" class="btn btn-primary btn-lg">Tắt đèn</button>
+        </div>
+
+        <div class="col-3" id="room5">
+          <h3>Phòng 05</h3>
+          <h3 id="status-p5">Trạng Thái Đèn: Đang Tắt</h3>
+          <button type="button" onclick="onClick5()" class="btn btn-primary btn-lg">Bật đèn</button>
+          <button type="button" onclick="offClick5()" class="btn btn-primary btn-lg">Tắt đèn</button>
+        </div>
+
+        <div class="col-3" id="room6">
+          <h3>Phòng 06</h3>
+          <h3 id="status-p6">Trạng Thái Quạt: Đang Tắt</h3>
+          <button type="button" onclick="onClick6()" class="btn btn-primary btn-lg">Bật Quạt</button>
+          <button type="button" onclick="offClick6()" class="btn btn-primary btn-lg">Tắt Quạt</button>
+        </div>
+
+
+        <div class="col-3" id="room7">
+          <h3>Phòng 06</h3>
+          <h3 id="status-p7">Trạng Thái Đèn: Đang Tắt</h3>
+          <button type="button" onclick="onClick7()" class="btn btn-primary btn-lg">Bật đèn</button>
+          <button type="button" onclick="offClick7()" class="btn btn-primary btn-lg">Tắt đèn</button>
+        </div>
+
+
+
+        <div class="col-6" id="all">
+          <h3>Chế độ khác</h3>
+          <button type="button" onclick="onClick81()" class="btn btn-primary btn-lg">Bật Tất Cả Quạt</button>
+          <button type="button" onclick="onClick82()" class="btn btn-primary btn-lg">Tắt Tất Cả Quạt</button>
+          <button type="button" onclick="onClick83()" class="btn btn-primary btn-lg">Bật Tất Cả Đèn</button>
+          <button type="button" onclick="onClick84()" class="btn btn-primary btn-lg">Tắt Tất Cả Đèn</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="menu" class="modal-js display-none">
+    <div class="menu-home">
+      <div class="menu-heading">
+        <p>Home</p>
+        <div class="close-menu">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="menu-content">
+        <ul class="menu-list">
+          <li><a href="#room1">Phòng 1</a></li>
+          <li><a href="#room2">Phòng 2</a></li>
+          <li><a href="#room3">Phòng 3</a></li>
+          <li><a href="#room4">Phòng 4</a></li>
+          <li><a href="#room5">Phòng 5</a></li>
+          <li><a href="#room6">Phòng 6</a></li>
+          <li><a href="#room7">Phòng 7</a></li>
+          <li><a href="#all">Chế độ khác</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  //   modal menu
+  var buttonOpenMenu = document.querySelector('.open-menu');
+  var buttonCloseMenu = document.querySelector('.close-menu');
+  var menu = document.querySelector('.modal-js');
+
+  function openMenu() {
+    menu.classList.remove('display-none');
+  }
+  function closeMenu() {
+    menu.classList.add('display-none');
+  }
+  buttonCloseMenu.addEventListener('click', closeMenu);
+  buttonOpenMenu.addEventListener('click', openMenu);
+
+  // All animations will take exactly 500ms
+  var scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 1000,
+    speedAsDuration: true
+  });
+
+// 
+var client = new Paho.MQTT.Client("broker.hivemq.com", 8000,"web_" + parseInt(Math.random() * 100, 10));  
+client.onConnectionLost = onConnectionLost;  
+client.onMessageArrived = onMessageArrived;
+
+var options = { useSSL: false,userName: "",password: " ",onSuccess: onConnect , onFailure: doFail } 
+
+client.connect(options);  
+    
+function onConnect()
+{
+    console.log("Connect tới Server");
+    client.subscribe("maixuankien2018605403/iotBtnInfo");	 		
+}  
+
+function doFail(e) {
+    console.log("Không kết nối được tới server");
+    console.log(e);
+}
+
+function onConnectionLost(responseObject) 
+{
+    if (responseObject.errorCode !== 0) 
+    {
+    console.log("error");
+    console.log("onConnectionLost:" + responseObject.errorMessage);
+    }
+} 
+
+function onMessageArrived(message) 
+{
+    console.log("Data ESP:" + message.payloadString);
+    var DataServer = message.payloadString;
+    //document.getElementById("status-relay-1").innerHTML = DataServer;
+    var DataJson = JSON.parse(DataServer);
+    console.log(DataJson.den1)
+
+
+// hiển thị trạng thái relay 1
+
+    if(DataJson.den6 == 1 || DataServer == 61)
+    {
+
+        document.getElementById("status-p1").innerHTML = "Trạng Thái đèn: Đang Bật";
+    }
+    else
+        document.getElementById("status-p1").innerHTML = "Trạng Thái đèn: Đang Tắt";
+
+
+    if(DataJson.den5 == 1 || DataServer == 51)
+    {
+
+        document.getElementById("status-p2").innerHTML = "Trạng Thái Quạt: Đang Bật";
+    }
+    else
+        document.getElementById("status-p2").innerHTML = "Trạng Thái Quạt: Đang Tắt";
+
+    if(DataJson.den3 == 1 || DataServer == 31)
+    {
+
+        document.getElementById("status-p3").innerHTML = "Trạng Thái đèn: Đang Bật";
+    }
+    else
+        document.getElementById("status-p3").innerHTML = "Trạng Thái đèn: Đang Tắt";
+
+
+    if(DataJson.den1 == 1 || DataServer == 11)
+    {
+
+        document.getElementById("status-p4").innerHTML = "Trạng Thái đèn: Đang Bật";
+    }
+    else
+        document.getElementById("status-p4").innerHTML = "Trạng Thái đèn: Đang Tắt";
+
+    if(DataJson.den4 == 1 || DataServer == 41)
+    {
+
+        document.getElementById("status-p5").innerHTML = "Trạng Thái đèn: Đang Bật";
+    }
+    else
+        document.getElementById("status-p5").innerHTML = "Trạng Thái đèn: Đang Tắt";
+
+
+    if(DataJson.den7 == 1 || DataServer == 71)
+    {
+
+        document.getElementById("status-p6").innerHTML = "Trạng Thái Quạt: Đang Bật";
+    }
+    else
+        document.getElementById("status-p6").innerHTML = "Trạng Thái Quạt: Đang Tắt";
+
+    if(DataJson.den2 == 1 || DataServer == 21)
+    {
+
+        document.getElementById("status-p7").innerHTML = "Trạng Thái đèn: Đang Bật";
+    }
+    else
+        document.getElementById("status-p7").innerHTML = "Trạng Thái đèn: Đang Tắt";
+}
+
+
+var room1 = document.getElementById("room1");
+
+function onClick1()
+{
+	var DataSend = "61";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+  console.log(room1);
+	 
+}
+function offClick1()
+{
+	var DataSend = "60";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+function onClick2()
+{
+	var DataSend = "51";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+	 
+}
+function offClick2()
+{
+	var DataSend = "50";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+
+function onClick3()
+{
+	var DataSend = "31";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+	 
+}
+function offClick3()
+{
+	var DataSend = "30";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+
+function onClick4()
+{
+	var DataSend = "11";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+	 
+}
+function offClick4()
+{
+	var DataSend = "10";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+
+function onClick5()
+{
+	var DataSend = "41";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+	 
+}
+function offClick5()
+{
+	var DataSend = "40";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+
+function onClick6()
+{
+	var DataSend = "71";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+	 
+}
+function offClick6()
+{
+	var DataSend = "70";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+
+function onClick7()
+{
+	var DataSend = "21";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+	 
+}
+function offClick7()
+{
+	var DataSend = "20";
+	client.send("maixuankien2018605403/iotRelayControl", DataSend, 2, false);
+}
+
+function onClick81()
+{
+	client.send("maixuankien2018605403/iotRelayControl", "71", 2, false);
+    client.send("maixuankien2018605403/iotRelayControl", "51", 2, false);
+}
+
+function onClick82()
+{
+	client.send("maixuankien2018605403/iotRelayControl", "70", 2, false);
+    client.send("maixuankien2018605403/iotRelayControl", "50", 2, false);
+}
+
+
+function onClick83()
+{
+	client.send("maixuankien2018605403/iotRelayControl", "11", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "21", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "31", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "41", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "61", 2, false);
+}
+
+
+function onClick84()
+{
+	client.send("maixuankien2018605403/iotRelayControl", "10", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "20", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "30", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "40", 2, false);
+	client.send("maixuankien2018605403/iotRelayControl", "60", 2, false);
+}
+
+
+</script>
+
+</html>

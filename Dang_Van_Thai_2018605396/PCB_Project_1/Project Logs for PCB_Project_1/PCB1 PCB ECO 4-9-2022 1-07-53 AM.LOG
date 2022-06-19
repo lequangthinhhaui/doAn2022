@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=220V~F1 Pin=HILINK1-1
-Removed Pin From Net: NetName=0V~F1 Pin=HILINK1-2
-Removed Pin From Net: NetName=GND Pin=HILINK1-3
-Removed Pin From Net: NetName=VCC5 Pin=HILINK1-4
-Added Component: Designator=HILINK1(HILINK_1W)
-Added Pin To Net: NetName=GND Pin=HILINK1-3
-Added Pin To Net: NetName=VCC5 Pin=HILINK1-4
-Added Member To Class: ClassName=Sheet1 Member=Component Arduino1 Arduino Nano

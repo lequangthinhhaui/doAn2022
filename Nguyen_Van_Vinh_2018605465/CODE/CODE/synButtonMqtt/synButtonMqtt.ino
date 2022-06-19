@@ -1,14 +1,3 @@
-/*
-  ModbusRTU ESP32
-  Concurent thread example
-  
-  (c)2020 Alexander Emelianov (a.m.emelianov@gmail.com)
-  https://github.com/emelianov/modbus-esp8266
-
-  Tool Modbus Slave on PC for test
-  https://www.modbustools.com/download.html
-*/
-
 
 #include <PubSubClient.h>
 #include <WiFi.h>
@@ -22,8 +11,8 @@
  #include <AsyncElegantOTA.h>
 
 
-#define ssid "Zoro"
-#define password "minhdien04"
+#define ssid "dieukhien"
+#define password "123456788"
 
 
 #define mqtt_server "broker.hivemq.com" 
@@ -31,14 +20,14 @@
 #define mqtt_pwd ""
 const uint16_t mqtt_port = 1883; 
 
-String mqtt_topic_control_TB = "nguyenvanvinh/controlTB"; //subscribe
-
+String mqtt_topic_control_TB = "nguyenvanvinh/controlTB"; //subscribe nhan ve
 String mqtt_topic_infor_TB_ALL = "nguyenvanvinh/inforTBALL";//publish
-
-String mqtt_topic_infor_TB_Relay = "nguyenvanvinh/inforTBRelay"; //publish
+String mqtt_topic_infor_TB_Relay = "nguyenvanvinh/inforTBRelay"; //publish gui di
 
 WiFiClient espClient;
 PubSubClient client(espClient);
+
+
 AsyncWebServer server(80);
 
 //function define 
@@ -46,27 +35,22 @@ void callback(char* topic, byte* payload, unsigned int length);
 void setup_wifi();
 void reconnect();
 
-//rtos define 
+//rtos define khoi tao nhiêu luong
 void taskInit();
-void sendMqttTask();
-void sendMqtt(void *parameter);
-
-//handle task
-void sendDataMQTT();
 
 //ota update
 void  otaUpdate();
 
 
-
-//user var define
+//user var define khai bao cac bien
 String Data = "";
 uint16_t dataInt = 0;
 float dataFloat = 0;
+uint16_t dataLight = 0;
 
 
 
-//button variable
+//button variable vao
 int den3Pin = 15;
 int den2Pin = 4;
 int den1Pin = 16;
@@ -74,22 +58,15 @@ int den4Pin = 17;
 int denAllPin = 5;
 int remPin = 18;
 
-////output pin
-//int den1OutPin = 26;
-//int den2OutPin = 25;
-//int den3OutPin = 33;
-//int den4OutPin = 23;
-//int den5OutPin = 32;
-//int l298COutPin = 14;
-//int l298DOutPin = 27;
 
-
-//output pin
-int den4OutPin = 26;
+//output pin 
 int den1OutPin = 25;
-int den5OutPin = 33;
-int den3OutPin = 23;
 int den2OutPin = 32;
+int den3OutPin = 23;
+int den4OutPin = 26;
+int den5OutPin = 33;
+
+
 int l298COutPin = 14;
 int l298DOutPin = 27;
 
@@ -102,36 +79,48 @@ int button5PressCount = 0;
 int button6PressCount = 0;
 
 
-//pwm channel
+
 int PWMchannel0 = 0;
 int PWMchannel1 = 1;
+
+// nguyen mau khoi tao ham
 void l298nInit();
-void rotateClock();
-
-
 void pinInit();
 
-///handle button task
+void rotateClock();
+void rotateNotClock();
+
+//******************KHAI BAO NGUYEN MAU RTOS******************
+//khai bao ham nguyen mau cua cac nut nhan rtos
 void handleButton1Task();
 void handleButton2Task();
 void handleButton3Task();
 void handleButton4Task();
 void handleButton5Task();
 void handleButton6Task();
-
-
 void handleButton1(void *parameter);
 void handleButton2(void *parameter);
 void handleButton3(void *parameter);
 void handleButton4(void *parameter);
 void handleButton5(void *parameter);
 void handleButton6(void *parameter);
+//khai bao ham nguyen mau cua cac nut nhan rtos
 
+//khai bao ham gui du lieu len mqtt
+void sendMqttTask();
+void sendMqtt(void *parameter);
+void sendDataMQTT();
+//khai bao ham gui du lieu len mqtt
+
+//khai bao ham doc cam bien va xu ly cam bien
 void handleAutoTask();
 void handleAuto(void *parameter);
+//khai bao ham doc cam bien va xu ly cam bien
+
+//******************KHAI BAO NGUYEN MAU RTOS******************
 
 
-uint16_t dataLight = 0;
+
 void setup() {
   Serial.begin(115200);
   WiFi.begin(ssid, password);
@@ -142,13 +131,11 @@ void setup() {
   client.setServer(mqtt_server, mqtt_port); 
   client.setCallback(callback);
   taskInit();
-
 }
+
 
 void loop()
 {
-  dataLight = analogRead(36);
-//  Serial.println(dataLight);
   if (!client.connected()) {
     reconnect();
   }
@@ -161,7 +148,7 @@ void callback(char* topic, byte* payload, unsigned int length)
   String Data = "";
   for (int i = 0; i < length; i++)
   {
-    Data += (char)payload[i]; // abcde
+    Data += (char)payload[i]; 
   }
 
 
@@ -172,10 +159,11 @@ void callback(char* topic, byte* payload, unsigned int length)
     String Data = "";
     for (int i = 0; i < length; i++)
     {
-      Data += (char)payload[i]; // abcde
+      Data += (char)payload[i]; 
     }
     dataInt = Data.toInt();
     Serial.println(dataInt);
+
     ///button 1
     if (dataInt == 10)
     {
@@ -316,6 +304,28 @@ void reconnect()
   }
 }
 
+
+
+//************************gui du lieu len mqtt*************************
+void sendMqttTask()
+{
+  xTaskCreatePinnedToCore(  
+    sendMqtt,  
+    "sendMqtt", 
+    2048,         
+    NULL,         
+    1,            
+    NULL,       
+    1);
+}
+
+void sendMqtt(void *parameter) {
+  while (1) {
+  sendDataMQTT();
+  vTaskDelay(2000 / portTICK_PERIOD_MS);
+  }
+}
+
 void sendDataMQTT()
 {
   DynamicJsonDocument doc(1024);
@@ -329,113 +339,19 @@ void sendDataMQTT()
   serializeJson(doc, inforInverterBuff);
   client.publish(mqtt_topic_infor_TB_ALL.c_str(), inforInverterBuff);
 }
-
-//rtos task 
-void sendMqttTask()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    sendMqtt,  // Function to be called
-    "sendMqtt",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
+//************************gui du lieu len mqtt*************************
 
 
-void sendMqtt(void *parameter) {
-  while (1) {
-  sendDataMQTT();
-  vTaskDelay(2000 / portTICK_PERIOD_MS);
-  }
-}
-
-
+//************************xu ly nut nhan 01*************************
 void handleButton1Task()
 {
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleButton1,  // Function to be called
-    "handleButton1",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
-
-void handleButton2Task()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleButton2,  // Function to be called
-    "handleButton2",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
-
-void handleButton3Task()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleButton3,  // Function to be called
-    "handleButton3",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
-
-
-void handleButton4Task()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleButton4,  // Function to be called
-    "handleButton4",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
-
-void handleButton5Task()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleButton5,  // Function to be called
-    "handleButton5",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
-
-void handleButton6Task()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleButton6,  // Function to be called
-    "handleButton6",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    1,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
-    1);
-}
-
-
-
-void handleAutoTask()
-{
-  xTaskCreatePinnedToCore(  // Use xTaskCreate() in vanilla FreeRTOS
-    handleAuto,  // Function to be called
-    "handleAuto",   // Name of task
-    2048,         // Stack size (bytes in ESP32, words in FreeRTOS)
-    NULL,         // Parameter to pass to function
-    5,            // Task priority (0 to configMAX_PRIORITIES - 1)
-    NULL,         // Task handle
+  xTaskCreatePinnedToCore(  
+    handleButton1,  
+    "handleButton1",   
+    2048,         
+    NULL,         
+    1,            
+    NULL,        
     1);
 }
 
@@ -461,8 +377,20 @@ void handleButton1(void *parameter) {
     }
   }
 }
+//************************xu ly nut nhan 01*************************
 
-//handle button 2
+//************************xu ly nut nhan 02*************************
+void handleButton2Task()
+{
+  xTaskCreatePinnedToCore(  
+    handleButton2,  
+    "handleButton2",   
+    2048,         
+    NULL,         
+    1,            
+    NULL,         
+    1);
+}
 
 void handleButton2(void *parameter) {
   while (1) {
@@ -485,10 +413,21 @@ void handleButton2(void *parameter) {
     }
   }
 }
+//************************xu ly nut nhan 02*************************
 
 
-//handle button 3
-
+//************************xu ly nut nhan 03*************************
+void handleButton3Task()
+{
+  xTaskCreatePinnedToCore( 
+    handleButton3, 
+    "handleButton3",  
+    2048,       
+    NULL,      
+    1,           
+    NULL,       
+    1);
+}
 void handleButton3(void *parameter) {
   while (1) {
     while (digitalRead(den3Pin) == HIGH);
@@ -510,7 +449,21 @@ void handleButton3(void *parameter) {
     }
   }
 }
+//************************xu ly nut nhan 03*************************
 
+
+//************************xu ly nut nhan 04*************************
+void handleButton4Task()
+{
+  xTaskCreatePinnedToCore( 
+    handleButton4,  
+    "handleButton4",  
+    2048,        
+    NULL,       
+    1,          
+    NULL,        
+    1);
+}
 
 void handleButton4(void *parameter) {
   while (1) {
@@ -534,8 +487,58 @@ void handleButton4(void *parameter) {
     }
   }
 }
+//************************xu ly nut nhan 04*************************
 
 
+//************************xu ly nut nhan 05*************************
+void handleButton5Task()
+{
+  xTaskCreatePinnedToCore(  
+    handleButton5, 
+    "handleButton5",   
+    2048,        
+    NULL,         
+    1,            
+    NULL,         
+    1);
+}
+
+void handleButton5(void *parameter) {
+  while (1) {
+    while (digitalRead(remPin) == HIGH);
+    while (digitalRead(remPin) == LOW);
+    button5PressCount ++;
+    if (button5PressCount == 2)
+    {
+      button5PressCount = 0;
+    }
+    if (button5PressCount == 0)
+    {
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "50");
+      rotateNotClock();
+    }
+    else if (button5PressCount == 1)
+    {
+      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "51");
+      rotateClock();
+    }
+  }
+}
+//************************xu ly nut nhan 05*************************
+
+
+//************************xu ly nut nhan 06*************************
+void handleButton6Task()
+{
+  xTaskCreatePinnedToCore(  
+    handleButton6,  
+    "handleButton6",   
+    2048,         
+    NULL,         
+    1,            
+    NULL,        
+    1);
+}
 void handleButton6(void *parameter) {
   while (1) {
     while (digitalRead(denAllPin) == HIGH);
@@ -579,32 +582,25 @@ void handleButton6(void *parameter) {
     }
   }
 }
+//************************xu ly nut nhan 06*************************
 
-void handleButton5(void *parameter) {
-  while (1) {
-    while (digitalRead(remPin) == HIGH);
-    while (digitalRead(remPin) == LOW);
-    button5PressCount ++;
-    if (button5PressCount == 2)
-    {
-      button5PressCount = 0;
-    }
-    if (button5PressCount == 0)
-    {
-      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "50");
-      rotateNotClock();
-    }
-    else if (button5PressCount == 1)
-    {
-      client.publish(mqtt_topic_infor_TB_Relay.c_str(), "51");
-      rotateClock();
-    }
-  }
+
+//************************xu ly den sang theo cam bien*************************
+void handleAutoTask()
+{
+  xTaskCreatePinnedToCore(  
+    handleAuto,  
+    "handleAuto",  
+    2048,       
+    NULL,        
+    5,            
+    NULL,         
+    1);
 }
+
 void handleAuto(void *parameter) {
   while (1) {
-
-
+    dataLight = analogRead(36);
     if(dataLight <= 10)
     {
         digitalWrite(den5OutPin, HIGH);
@@ -616,7 +612,7 @@ void handleAuto(void *parameter) {
     vTaskDelay(1000 / portTICK_PERIOD_MS);
   }
 }
-
+//************************xu ly den sang theo cam bien*************************
 
 
 
@@ -633,7 +629,6 @@ void taskInit()
 }
 
 
-
  void otaUpdate()
  {
    AsyncElegantOTA.begin(&server);
@@ -641,9 +636,6 @@ void taskInit()
  }
 
 
-
-
-//pin handle
 void pinInit()
 {
   pinMode(den1Pin, INPUT);
@@ -662,6 +654,7 @@ void pinInit()
   
   pinMode(l298COutPin, OUTPUT);
   pinMode(l298DOutPin, OUTPUT);
+  
   digitalWrite(l298COutPin, LOW);
   digitalWrite(l298DOutPin, LOW);
 }

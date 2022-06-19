@@ -1,5 +1,0 @@
-Removed Pin From Net: NetName=220V~F1 Pin=FL1-3
-Removed Pin From Net: NetName=220V~F1 Pin=HILINK1-2
-Added Pin To Net: NetName=0V~F1 Pin=FL1-3
-Added Pin To Net: NetName=0V~F1 Pin=HILINK1-2
-Added Net: Name=0V~F1
